@@ -1,7 +1,60 @@
 # Altermath
 
-A research-first framework for consequential junctions between nested bounded systems.
+**Where bounded systems meet, relationships become computation.**
 
-> Five define expression. The sixth defines consequential connection.
+Altermath is a research-first, MIT-licensed framework exploring **consequential junctions between nested bounded systems**. Its first experiment is a dependency-free interactive browser simulator, where each bubble carries state, nested bubbles exchange signals through permitted interfaces, and independently bounded bubbles can establish new relationships when they meet.
 
-Initial bootstrap. See the first feature pull request for the formal model, simulator, and tests.
+> **Five define expression. The sixth defines consequential connection.**
+
+## Quick start
+
+No package installation needed. Requires Node.js 20+ for tests.
+
+```sh
+npm test
+npm run check
+```
+
+To run the visual simulator, serve this repository with any local static HTTP server:
+
+```sh
+python -m http.server 8080
+```
+
+Then open [http://localhost:8080](http://localhost:8080).
+
+> ES modules need an HTTP server, not a `file://` URL. GitHub Pages can serve this root `index.html` directly, with no build step.
+
+## What to try
+
+1. Run **Adaptive** mode: Bubble A contains five small nested functional bubbles; Bubble B approaches from outside. Watch for a new external junction.
+2. Select **Fixed** and reset: pre-existing junctions remain, but the approaching neighbor does not gain a new link.
+3. Select **Isolated** and reset: no coupling.
+4. Use **Inject signal** and **Step once** to observe the measurable state-transfer traces and conservation check.
+5. Change the coupling gain and compare aggregate transfer, state variance, and connection counts.
+
+## Model and boundaries
+
+The five outer functional abstractions are **Perception**, **Memory**, **Computation**, **Expression**, and **Regulation**. The **+1 Altermath Point** is an *eventful relation*, not necessarily a physical coordinate or central controller. A bubble may participate in multiple junctions; a higher-level bubble may contain more nested systems.
+
+The term *Pleroma* ("fullness") from Valentinian Gnostic thought is an **inspiration for visualizing a connected relational whole**, not a claim of identity between theological Aeons and computer processes. See [Pleroma analogy](docs/pleroma-analogy.md).
+
+This is an exploratory software pattern, **not** a discovered physical law, a proof of extra spatial dimensions, or a test of machine consciousness. The underlying diffusion process and graph are established modeling techniques; the novel proposal to evaluate is whether explicit, permission-aware adaptive junctions improve real use cases.
+
+## Repository contents
+
+- [Principle](docs/altermath-principle.md), [bubble layers](docs/nested-bubble-model.md), [math](docs/mathematical-foundations.md), [experiment plan](docs/experiment-design.md), [Pleroma analogy](docs/pleroma-analogy.md)
+- [Pure simulation core](src/core.js) and [repeatable demo world](src/demo.js)
+- [Interactive browser view](web/app.js) and [automated tests](tests/core.test.js)
+
+## Roadmap
+
+**Rung 1 (this PR):** formalism, simulator, tests and three controlled baselines.
+
+**Rung 2:** reproducible seeded multibubble benchmarks, event log export, throughput/overhead measurement, topology stress-testing.
+
+**Rung 3:** optional adapter interfaces for NBGPocketMesh, PhiKernel, PhiServe, PhiShare and CompAware, developed without forcing those repos to depend on Altermath.
+
+## License
+
+MIT. See [LICENSE](LICENSE).
