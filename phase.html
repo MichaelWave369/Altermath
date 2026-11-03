@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0b1020">
+  <title>Altermath | Hypercube Phase Lab</title>
+  <link rel="stylesheet" href="web/phase.css">
+  <script type="module" src="web/phase.js"></script>
+</head>
+<body>
+<main class="shell">
+<header class="hero">
+  <div class="eyebrow">PHI369 LABS • ALTERMATH RUNG 3 • 4D TOPOLOGY + PHASE COUPLING</div>
+  <h1>HYPERCUBE <span>PHASE LAB</span></h1>
+  <p class="tagline">When two bubbles connect, can their rhythms synchronize?</p>
+  <p class="lede">Inspired by Dalí’s <em>Corpus Hypercubus</em>. The tesseract graph is genuine mathematics; the phase oscillators and boundary permissions are experimental software models, not claims about the painting or physical dimensions.</p>
+  <nav><a href="index.html">← Nested Bubble Lab</a><a href="pleroma.html">Pleroma Network Lab</a><a href="https://github.com/MichaelWave369/Altermath">Source on GitHub</a></nav>
+</header>
+<section class="workspace">
+  <section class="panel diagram-panel" aria-label="Hypercube phase experiment">
+    <div class="panel-head"><h2>Projected 4D graph</h2><span id="status" class="status">PAUSED</span></div>
+    <svg id="hypercube" viewBox="0 0 900 540" role="img" aria-label="A rotating two-dimensional projection of a four-dimensional hypercube graph with live phase state"></svg>
+    <div class="legend"><span><i class="legend-dot bubble-a"></i> Nested cube A (8 nodes)</span><span><i class="legend-dot bubble-b"></i> Nested cube B (8 nodes)</span><span><i class="legend-line"></i> Altermath junction (boundary crossing)</span></div>
+    <div class="controls">
+      <label>Topology<select id="topology"><option value="tesseract">Tesseract Q4</option><option value="circulant">Ring + chords</option><option value="rewired">Seeded 4-regular</option></select></label>
+      <label>Coupling K <output id="coupling-label">2.4</output><input id="coupling" type="range" min="0" max="8" value="2.4" step="0.1"></label>
+      <label>Frequency spread <output id="spread-label">0.40</output><input id="spread" type="range" min="0" max="2" value="0.4" step="0.05"></label>
+      <label>4D rotation <output id="rotation-label">0.56</output><input id="rotation" type="range" min="0" max="6.28" step="0.03" value="0.56"></label>
+    </div>
+    <div class="actions">
+      <button id="play" type="button">Start</button><button id="step" class="secondary" type="button">Step</button><button id="reset" class="secondary" type="button">Reset</button>
+      <button id="close-gate" class="danger" type="button">Close Horos boundary</button><button id="open-gate" class="amber" type="button">Open Altermath junctions</button>
+    </div>
+    <div class="note" id="gate-note">Boundary closed: cross-bubble connections are disabled.</div>
+  </section>
+  <aside class="panel sidebar">
+    <h2>Measured synchronization</h2>
+    <div class="metrics">
+      <div><small>Global phase order <em>R</em></small><strong id="order">0.00</strong></div>
+      <div><small>Tick</small><strong id="tick">0</strong></div>
+      <div><small>Cube A order</small><strong id="left-order">0.00</strong></div>
+      <div><small>Cube B order</small><strong id="right-order">0.00</strong></div>
+      <div><small>Cross-boundary links</small><strong id="links">0</strong></div>
+      <div><small>Cross-boundary phase influence</small><strong id="transfer">0.000</strong></div>
+    </div>
+    <h2>Order over time</h2>
+    <svg id="history" viewBox="0 0 340 110" role="img" aria-label="Line chart of global phase order over the last 240 steps"></svg>
+    <p class="small">R = 1 means aligned phases. R near zero means phases cancel globally. Alignment is not evidence of consciousness.</p>
+    <h2>Interpretation</h2>
+    <p class="small"><b>Dalí’s geometry:</b> a tesseract has sixteen 4D vertices and thirty-two edges. Splitting Q4 by its fourth coordinate gives two eight-vertex cubes linked by eight edges.</p>
+    <p class="small"><b>Our sixth point:</b> the *authorized, consequential relation* between bounded bubbles. It is not an extra vertex on a tesseract and does not add a physical dimension.</p>
+  </aside>
+</section>
+<section class="panel benchmark">
+  <div class="panel-head"><h2>Controlled comparison</h2><button id="benchmark" class="secondary" type="button">Run 240-step benchmark</button></div>
+  <p class="small">All topologies have 16 oscillators, 32 edges, degree four, identical initial phases and frequencies. A modeled Horos fault closes cross-bubble edges at tick 40; repair restores them at tick 90. The number of cross-boundary edges varies by topology and is shown explicitly.</p>
+  <div class="scroll"><table><thead><tr><th>Topology</th><th>Possible boundary links</th><th>Mean global order</th><th>Final global order</th><th>Cross-boundary influence</th></tr></thead><tbody id="benchmark-rows"><tr><td colspan="5">Run the benchmark to compare the network structures.</td></tr></tbody></table></div>
+  <p class="small">This is a deterministic Kuramoto-type simulation, not a benchmark of real devices, a claim of universal topology superiority, or evidence for a new dimension.</p>
+</section>
+<footer><a href="docs/hypercube-phase-lab.md">Model, sources and experimental limits</a> · MIT research prototype · © 2026 PHI369 Labs</footer>
+</main>
+</body>
+</html>
