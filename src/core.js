@@ -71,10 +71,12 @@ function permitted(a, b) {
 }
 
 export function findJunctions(bubbles, { requireContact = true } = {}) {
+  // Public API accepts both lightweight input objects and normalized world bubbles.
+  const entries = bubbles.map(normalize);
   const result = [];
-  for (let i = 0; i < bubbles.length; i++) {
-    for (let k = i + 1; k < bubbles.length; k++) {
-      const a = bubbles[i], b = bubbles[k];
+  for (let i = 0; i < entries.length; i++) {
+    for (let k = i + 1; k < entries.length; k++) {
+      const a = entries[i], b = entries[k];
       const kind = relationship(a, b);
       if (!kind || !permitted(a, b)) continue;
       const directNest = a.parentId === b.id || b.parentId === a.id;
