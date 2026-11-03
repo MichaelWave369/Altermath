@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0c1120">
+  <title>Altermath | Nested Bubble Lab</title>
+  <link rel="stylesheet" href="web/styles.css">
+  <script type="module" src="web/app.js"></script>
+</head>
+<body>
+  <main class="shell">
+    <header class="hero">
+      <div class="eyebrow">PHI369 LABS · RUNG 1 · RESEARCH SANDBOX</div>
+      <h1>ALTERMATH<span class="glow">.</span></h1>
+      <p class="tagline">Five define expression. The sixth defines consequential connection.</p>
+      <p class="sub">Explore internal nested-bubble exchanges and new external junctions. This is a graph-and-state simulator, not a model of extra physical dimensions.</p>
+    </header>
+    <section class="layout" aria-label="Altermath simulator">
+      <div class="panel main-panel">
+        <div class="panel-top">
+          <h2>Living junction field</h2>
+          <span id="status" class="status">PAUSED</span>
+        </div>
+        <div class="stage-wrap">
+          <svg id="stage" viewBox="0 0 900 480" role="img" aria-label="Interactive nested bubble system with internal and external junctions"></svg>
+        </div>
+        <div class="controls">
+          <button id="play" type="button">Start simulation</button>
+          <button id="step" type="button" class="secondary">Step once</button>
+          <button id="reset" type="button" class="secondary">Reset</button>
+          <button id="inject" type="button" class="accent">Inject signal into B</button>
+          <label for="mode">Coupling mode</label>
+          <select id="mode">
+            <option value="adaptive">Adaptive junctions</option>
+            <option value="fixed">Fixed junctions</option>
+            <option value="isolated">Isolated systems</option>
+          </select>
+          <label for="gain">Exchange gain <output id="gain-label">0.24</output></label>
+          <input id="gain" type="range" min="0" max="1" step="0.02" value="0.24">
+        </div>
+      </div>
+      <aside class="panel sidebar">
+        <h2>Measured state</h2>
+        <div class="stats" aria-live="polite">
+          <div><small>Tick</small><strong id="tick">0</strong></div>
+          <div><small>Junctions</small><strong id="junction-count">0</strong></div>
+          <div><small>Internal / external</small><strong id="types">0 / 0</strong></div>
+          <div><small>Total signal</small><strong id="total">0</strong></div>
+          <div><small>Variance</small><strong id="variance">0</strong></div>
+          <div><small>Cumulative transfer</small><strong id="transfer">0</strong></div>
+        </div>
+        <h2>Junction events</h2>
+        <p class="micro">Events require measurable exchange. Mere geometric contact is not an Altermath event.</p>
+        <ol id="events" class="events" aria-live="polite">
+          <li>Start or step the simulation.</li>
+        </ol>
+      </aside>
+    </section>
+    <section class="readout">
+      <h2>What am I looking at?</h2>
+      <div class="cards">
+        <article><h3>Five functions</h3><p>Perception · Memory · Computation · Expression · Regulation, nested within Bubble A.</p></article>
+        <article><h3>Sixth-point junction</h3><p>An allowed, transient relation where state can change across boundaries. It is not a literal sixth pentagram vertex.</p></article>
+        <article><h3>Pleroma analogy</h3><p>The connected whole suggests the symbolic idea of “fullness.” In Gnostic traditions the Pleroma is a theological realm, not this software model.</p></article>
+      </div>
+    </section>
+    <footer>© 2026 PHI369 Labs · MIT research prototype · <a href="https://github.com/MichaelWave369/Altermath">Source on GitHub</a></footer>
+  </main>
+</body>
+</html>
