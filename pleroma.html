@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0c1120">
+  <title>Pleroma Network Lab | Altermath</title>
+  <link rel="stylesheet" href="web/styles.css">
+  <link rel="stylesheet" href="web/pleroma.css">
+  <script type="module" src="web/pleroma.js"></script>
+</head>
+<body>
+<main class="shell pleroma-shell">
+  <nav class="navigation"><a href="index.html">← Altermath Bubble Lab</a><a href="https://github.com/MichaelWave369/Altermath">GitHub source</a></nav>
+  <header class="hero">
+    <div class="eyebrow">PHI369 LABS · RUNG 2 · A SOURCE-AWARE EXPERIMENT</div>
+    <h1>PLEROMA<span class="glow">.</span></h1>
+    <p class="tagline">From historical relationships to measurable network behavior.</p>
+    <p class="sub">An interpretation of one Valentinian account reported by Irenaeus: 30 Aeons, 15 pairs, 8 + 10 + 12. The topology, diffusion law, access permissions, and fault experiment below are <strong>modern computational choices</strong>, not claims about ancient technology.</p>
+  </header>
+  <div class="historical-strip" aria-label="Historically reported grouping">
+    <div><strong>8</strong><span>Ogdoad · 4 pairs</span></div>
+    <div><strong>10</strong><span>Decad · 5 pairs</span></div>
+    <div><strong>12</strong><span>Duodecad · 6 pairs</span></div>
+    <div class="total"><strong>30</strong><span>Aeons · 15 syzygies</span></div>
+  </div>
+  <section class="layout" aria-label="Interactive Pleroma network simulation">
+    <div class="panel main-panel">
+      <div class="panel-top"><h2>Network laboratory</h2><span id="status" class="status">PAUSED</span></div>
+      <div class="stage-wrap pleroma-stage"><svg id="pleroma-stage" viewBox="0 0 900 620" role="img" aria-label="30 Aeons arranged in three rings, with historical pair links and illustrative topology connections"></svg></div>
+      <div class="key" aria-label="Diagram legend"><span><i class="dot ogdoad"></i>Ogdoad</span><span><i class="dot decad"></i>Decad</span><span><i class="dot duodecad"></i>Duodecad</span><span><i class="line syzygy"></i>Syzygy</span><span><i class="line model"></i>Modeled link</span></div>
+      <div class="controls" id="controls">
+        <label for="topology">Topology</label>
+        <select id="topology"><option value="valentinian">Valentinian-inspired</option><option value="ring">Ring + shortcuts</option><option value="seeded">Seeded random</option></select>
+        <button id="play" type="button">Run</button>
+        <button id="step" type="button" class="secondary">Step</button>
+        <button id="fault" type="button" class="accent">Sophia fault</button>
+        <button id="crossing" type="button" class="secondary">Test Horos boundary</button>
+        <button id="repair" type="button" class="accent">Repair junction</button>
+        <button id="reset" type="button" class="secondary">Reset</button>
+      </div>
+      <p class="hint">Suggested sequence: <b>Sophia fault</b> → <b>Test Horos boundary</b> → <b>Repair junction</b> → <b>Run</b>. Select a node to inspect it. Changing topology resets the simulation.</p>
+    </div>
+    <aside class="panel sidebar">
+      <h2>State measurements</h2>
+      <div class="stats" aria-live="polite">
+        <div><small>Tick</small><strong id="tick">0</strong></div>
+        <div><small>Active links / 43</small><strong id="edges">43</strong></div>
+        <div><small>Connected components</small><strong id="components">1</strong></div>
+        <div><small>Sophia pair difference</small><strong id="difference">0.00</strong></div>
+        <div><small>Signal variance</small><strong id="variance">0.00</strong></div>
+        <div><small>Total signal</small><strong id="total">0.00</strong></div>
+        <div><small>Denied requests</small><strong id="denied">0</strong></div>
+        <div><small>Recovery tick</small><strong id="recovered">—</strong></div>
+      </div>
+      <h2>Selected Aeon</h2>
+      <div id="selected" class="node-readout">Click a node in the network.</div>
+      <h2>Event audit</h2>
+      <ol id="audit" class="events" aria-live="polite"><li>No recorded boundary or repair events.</li></ol>
+    </aside>
+  </section>
+  <section class="panel comparison" aria-labelledby="compare-heading">
+    <div class="panel-top"><h2 id="compare-heading">Controlled topology comparison</h2><button id="benchmark" type="button" class="secondary">Run 100-tick comparison</button></div>
+    <p class="hint">All three networks have 30 nodes, the same 15 pairs, 43 starting links, and identical initial signals. The fault cuts the Sophia–Theletos link and adds +0.5 signal at tick 0. Horos denies an attempted direct crossing to Bythus; the pair junction is restored at tick 15. Different connectivity patterns can still produce different results. This comparison does not control degree distribution or establish architectural superiority.</p>
+    <div class="chart-settings"><label for="metric">Chart metric</label><select id="metric"><option value="pairDifference">Sophia pair difference (lower is closer)</option><option value="variance">Global signal variance</option></select></div>
+    <svg id="benchmark-chart" viewBox="0 0 830 220" role="img" aria-label="Three line charts comparing network models across 100 ticks"></svg>
+    <div class="compare-legend"><span><i class="dot historical"></i>Valentinian-inspired</span><span><i class="dot ring"></i>Ring + shortcuts</span><span><i class="dot random"></i>Seeded random</span></div>
+    <div class="table-scroll"><table class="comparison-table"><thead><tr><th>Topology</th><th>Final pair difference</th><th>Final variance</th><th>Recovery tick</th><th>Components</th></tr></thead><tbody id="benchmark-rows"></tbody></table></div>
+    <p id="benchmark-note" class="hint">Run the comparison to populate results.</p>
+  </section>
+  <section class="readout" aria-label="Methodology">
+    <h2>Two different layers of the project</h2>
+    <div class="cards">
+      <article><h3>Historical source</h3><p>Names, groupings, syzygies and reported emanation parentage are recorded from Irenaeus, <em>Against Heresies</em> I.1, a polemical ancient source. Not all Gnostic traditions share this scheme.</p></article>
+      <article><h3>Modern mechanism</h3><p>Every source pair is preserved; pair genealogy is compiled into two communication edges per emanation, a deliberate modeling decision. Horos acts as a configurable access boundary.</p></article>
+      <article><h3>Falsifiable experiment</h3><p>Compare repair behavior, connectivity, and convergence under equal node and link budgets. The model can reveal topology effects without validating theology or additional physical dimensions.</p></article>
+    </div>
+  </section>
+  <footer>Research prototype · MIT · <a href="https://www.newadvent.org/fathers/0103101.htm">Primary account: Irenaeus, Book I.1</a> · <a href="https://www.newadvent.org/fathers/0103102.htm">Sophia and Horos: Book I.2</a></footer>
+</main>
+</body>
+</html>

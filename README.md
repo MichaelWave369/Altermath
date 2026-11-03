@@ -58,3 +58,14 @@ This is an exploratory software pattern, **not** a discovered physical law, a pr
 ## License
 
 MIT. See [LICENSE](LICENSE).
+
+## Rung 2: Pleroma Network Lab
+
+The [Pleroma Network Lab](pleroma.html) explores one source-grounded Valentinian list of **30 Aeons in 15 syzygies** through a modern graph-and-diffusion experiment. It includes three equally sized topologies, Sophia fault injection, a Horos-like boundary check, authorized pair repair, and reproducible metrics.
+
+- Browser: serve the repository root with `python -m http.server 8080` and open [http://localhost:8080/pleroma.html](http://localhost:8080/pleroma.html).
+- CLI: `npm run pleroma:benchmark` (optional arguments: seed, steps, repair tick).
+- Tests: `npm run check`.
+- Source-aware explanation and caveats: [Pleroma Network Model](docs/pleroma-network-model.md).
+
+*Historical names and pair-level parentage are sourced to Irenaeus; synthetic communication edges, shocks and access rules are explicit modeling choices.*

@@ -27,3 +27,7 @@ The next engineering question is whether this representation is more useful than
 - *Gospel of Truth* (Nag Hammadi text, Grant translation): https://gnosis.org/naghamm/got.html
 - The pair / syzygy in Valentinian thought: https://www.gnosis.org/library/valentinus/Syzygy_Valentinian.htm
 - Overview of Valentinian scriptural interpretation: https://www.gnosis.org/library/valentinus/Valentinian_Scriptural.htm
+
+## Working model
+
+[Open the source-aware Pleroma Network Lab](pleroma-network-model.md) for the exact reported 30 names, 15 pairs, lineage graph, and transparent explanation of our computational choices. The new [browser simulator](../pleroma.html) compares equal-size networks under the same fault and repair schedule.

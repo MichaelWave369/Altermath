@@ -1,13 +1,14 @@
 {
   "name": "altermath",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "module",
-  "description": "A research-first nested bubble junction simulator",
+  "description": "Research simulators for consequential junctions and historical Pleroma-inspired networks",
   "engines": { "node": ">=20" },
   "scripts": {
     "test": "node --test",
-    "check": "node --check src/core.js && node --check src/demo.js && node --check web/app.js && npm test"
+    "check": "node --check src/core.js && node --check src/demo.js && node --check web/app.js && node --check src/pleroma-data.js && node --check src/pleroma-network.js && node --check web/pleroma.js && node --check scripts/pleroma-benchmark.js && npm test",
+    "pleroma:benchmark": "node scripts/pleroma-benchmark.js"
   },
   "license": "MIT"
 }
