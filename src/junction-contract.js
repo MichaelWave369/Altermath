@@ -110,8 +110,10 @@ export function setPeerEnabled(bridge,peerId,enabled) {
   return {...bridge,peers:bridge.peers.map(p=>p.id===peerId?{...p,enabled}:p)};
 }
 
-export function stepJunctionBridge(bridge,{limit=1}={}) {
+export function stepJunctionBridge(bridge,{limit=1,authorizeDelivery=null}={}) {
   if (!positiveInt(limit) || limit>1000) throw new TypeError("Invalid delivery limit");
+  if (authorizeDelivery !== null && typeof authorizeDelivery !== "function")
+    throw new TypeError("Invalid delivery authorizer");
   let next={...bridge,tick:bridge.tick+1,queue:[],delivered:[...bridge.delivered]};
   let served=0;
   for (const m of bridge.queue) {
@@ -122,6 +124,15 @@ export function stepJunctionBridge(bridge,{limit=1}={}) {
     } else if (served>=limit) {
       next.queue.push(m);
     } else {
+      let stillAuthorized=true;
+      if (authorizeDelivery !== null) {
+        try { stillAuthorized=authorizeDelivery(m) === true; }
+        catch { stillAuthorized=false; }
+      }
+      if (!stillAuthorized) {
+        next=denied(next,m.id,"AUTHORIZATION_REVOKED","revoked");
+        continue;
+      }
       served++;
       next.delivered.push({...m,deliveredAt:next.tick});
       next={...next,counters:{...next.counters,delivered:next.counters.delivered+1}};
