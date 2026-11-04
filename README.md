@@ -148,3 +148,18 @@ junction as beneficial.
 - **Tests:** \`npm run test --prefix site\` and the existing GitHub Actions React build.
 
 These are reproducible simulations, not extra dimensions or consciousness tests.
+
+
+## Rung 9: Budget-constrained junction selection
+
+The new [selection methods and limitations](docs/junction-selection.md) test whether
+Rung 8's signed removal effects can guide a k-link subset that generalizes to
+**disjoint holdout seeds**. Learned, fixed, and shuffled methods all use the same
+connection budget. Full and disconnected controls are explicitly unmatched.
+
+- **CLI**: \`npm run junction:selection -- 369 6 9 9\`.
+- **Tests**: \`npm run test --prefix site\`.
+- **Live React**: A selectable budget, 3/6/9 train-and-holdout experiments,
+  comparison traces, and complete evidence export.
+
+The method is an offline fixed-subset heuristic, not online agent control.
