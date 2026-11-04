@@ -1,9 +1,9 @@
+import AeroAlterLab from './AeroAlterLab.jsx';
 import {useEffect, useMemo, useState} from 'react';
 import {GROUPS,activeLinks,createWorld,disturb,metrics,setGain,setGate,stepWorld} from './model.js';
 import ExperimentLab from './ExperimentLab.jsx';
 import AblationLab from './AblationLab.jsx';
 import SelectionLab from './SelectionLab.jsx';
-import AeroAlterLab from './AeroAlterLab.jsx';
 
 const BASE=import.meta.env.BASE_URL || '/Altermath/';
 const labs=[
@@ -126,7 +126,6 @@ export default function App(){
       <ExperimentLab />
       <AblationLab />
       <SelectionLab />
-      <AeroAlterLab />
       <section className="threefold" id="theory"><div className="section-head"><div><span className="micro">A MODEL OF THREE ROLES</span><h2>3 · Remembrance &nbsp; 6 · Alignment &nbsp; 9 · Return</h2></div><p>These are creative engineering correspondences inspired by the supplied images, not a historical 3–6–9 doctrine.</p></div>
         <div className="stage-grid">{GROUPS.map(g=>{const c=copy[g.id];return <button key={g.id} className={focus===g.id?'stage-card chosen':'stage-card'} onClick={()=>setFocus(g.id)} aria-pressed={focus===g.id} style={{'--accent':g.color}}><div className="card-top"><span>{c.eyebrow}</span><b>{g.id}</b></div><h3>{c.title}</h3><div className="card-principle">{c.principle}</div><p>{c.quote}</p><small>{c.parts.join(' · ')}</small></button>})}</div>
         <div className="focus-box" style={{'--focus':GROUPS.find(g=>g.id===focus).color}}><div><span className="micro">ACTIVE INTERPRETATION / {focus}</span><h3>{focus} · {selected.title}</h3><p>{selected.action}</p></div><span className="focus-glyph">{focus}</span></div>
@@ -135,6 +134,7 @@ export default function App(){
       <section className="labs" id="laboratories"><div className="section-head"><div><span className="micro">THE EXISTING EXPERIMENTS · PRESERVED</span><h2>Explore the laboratories</h2></div><p>Every previous Rung stays available. The React front door does not replace the research tools.</p></div>
         <div className="lab-list">{labs.map(l=><a key={l.number} className="lab-row" href={l.file?BASE+l.file:'https://github.com/MichaelWave369/Altermath/blob/main/docs/verified-local-interop.md'} target="_blank" rel="noreferrer"><span className="lab-num">{l.number}</span><span className="lab-label"><strong>{l.name}</strong><small>{l.description}</small></span><span className="lab-type">{l.type}</span><span className="lab-arrow">↗</span></a>)}</div>
       </section>
+      <AeroAlterLab />
       <section className="method"><div><span className="micro">METHODOLOGICAL BOUNDARY</span><h2>Symbolism starts the question.<br/>Measurement tests the answer.</h2></div><p>Historical Gnostic, Hermetic, and theological concepts are inspiration for this research visualization. The mathematics are ordinary oscillator and graph models. Neither the symbols nor the simulations prove spiritual mechanisms, physical extra dimensions, or computational consciousness.</p></section>
     </main>
     <footer><span><b>Φ</b> ALTER MATH · PHI369 LABS</span><span>Local simulation. Open research. No external data exchange.</span><a href="https://github.com/MichaelWave369/Altermath" target="_blank" rel="noreferrer">View source ↗</a></footer>
