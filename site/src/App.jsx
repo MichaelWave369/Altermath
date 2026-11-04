@@ -1,4 +1,5 @@
 import AeroAlterLab from './AeroAlterLab.jsx';
+import BioLatticeLab from './BioLatticeLab.jsx';
 import {useEffect, useMemo, useState} from 'react';
 import {GROUPS,activeLinks,createWorld,disturb,metrics,setGain,setGate,stepWorld} from './model.js';
 import ExperimentLab from './ExperimentLab.jsx';
@@ -101,7 +102,7 @@ export default function App(){
   const reset=()=>{setRunning(false);setWorld(createWorld(369));};
   return <div className="app">
     <header className="topbar"><a className="brand" href={BASE} aria-label="Altermath Live home"><span className="mark">Φ</span><span><b>ALTERMATH</b><small>PHI369 LABS · LIVE RESEARCH</small></span></a>
-      <nav aria-label="Main navigation"><a href="#theory">3 · 6 · 9</a><a href="#experiments">Experiments</a><a href="#laboratories">Laboratories</a><a href="#aero-alter">Aero-Alter</a><a href="https://github.com/MichaelWave369/Altermath" target="_blank" rel="noreferrer">GitHub ↗</a></nav>
+      <nav aria-label="Main navigation"><a href="#theory">3 · 6 · 9</a><a href="#experiments">Experiments</a><a href="#laboratories">Laboratories</a><a href="#aero-alter">Aero-Alter</a><a href="#bio-lattice">Bio-Lattice</a><a href="https://github.com/MichaelWave369/Altermath" target="_blank" rel="noreferrer">GitHub ↗</a></nav>
     </header>
     <main>
       <section className="hero"><div><div className="eyebrow"><span className="signal-dot"/> RUNG 6 · REACTIVE RESEARCH INTERFACE</div>
@@ -141,6 +142,7 @@ export default function App(){
         <div className="lab-list">{labs.map(l=><a key={l.number} className="lab-row" href={l.file?BASE+l.file:'https://github.com/MichaelWave369/Altermath/blob/main/docs/verified-local-interop.md'} target="_blank" rel="noreferrer"><span className="lab-num">{l.number}</span><span className="lab-label"><strong>{l.name}</strong><small>{l.description}</small></span><span className="lab-type">{l.type}</span><span className="lab-arrow">↗</span></a>)}</div>
       </section>
       <AeroAlterLab />
+      <BioLatticeLab />
       <section className="method"><div><span className="micro">METHODOLOGICAL BOUNDARY</span><h2>Symbolism starts the question.<br/>Measurement tests the answer.</h2></div><p>Historical Gnostic, Hermetic, and theological concepts are inspiration for this research visualization. The mathematics are ordinary oscillator and graph models. Neither the symbols nor the simulations prove spiritual mechanisms, physical extra dimensions, or computational consciousness.</p></section>
     </main>
     <footer><span><b>Φ</b> ALTER MATH · PHI369 LABS</span><span>Local simulation. Open research. No external data exchange.</span><a href="https://github.com/MichaelWave369/Altermath" target="_blank" rel="noreferrer">View source ↗</a></footer>
