@@ -18,7 +18,8 @@
     "junction:ablation": "node scripts/junction-ablation.mjs",
     "junction:selection": "node scripts/junction-selection.mjs",
     "junction:controller": "node scripts/junction-controller.mjs",
-    "junction:robustness": "node scripts/junction-robustness.mjs"
+    "junction:robustness": "node scripts/junction-robustness.mjs",
+    "junction:replications": "node scripts/junction-replications.mjs"
   },
   "license": "MIT"
 }
