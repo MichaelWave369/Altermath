@@ -1,0 +1,35 @@
+name: Validate Aero-Alter Physics
+on:
+  pull_request:
+    paths:
+      - 'site/**'
+      - 'docs/aero-alter-physics.md'
+      - '.github/workflows/aero-alter-ci.yml'
+      - 'README.md'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test-and-build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install React dependencies
+        run: npm install --prefix site --no-audit --no-fund
+      - name: Test all existing research models plus Aero-Alter Physics
+        run: npm run test --prefix site
+      - name: Run root checks
+        run: npm run check
+      - name: Build existing React site and all legacy labs
+        run: npm run build --prefix site
+      - name: Validate published artifacts
+        run: |
+          test -f dist/index.html
+          test -f dist/lab.html
+          test -f dist/pleroma.html
+          test -f dist/phase.html
+          test -f dist/junction.html

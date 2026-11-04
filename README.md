@@ -119,6 +119,16 @@ The React front door hosts a deterministic 18-node Kuramoto-type oscillator mode
 If GitHub Pages is not yet configured, set **Settings → Pages → Build and deployment → GitHub Actions** before running the workflow. Do not claim the site is live until the deployment succeeds.
 
 
+## Aero-Alter Physics Department · Physics 01
+
+[Explore Aero-Alter Physics](https://michaelwave369.github.io/Altermath/#aero-alter) in the React site after deployment. A separate physics track offers four SI-unit interactive stations: **Shakuna** (aerodynamic lift), **Rukma** (driven resonance), **Sundara** (rocket momentum) and **Tripura** (buoyancy). Each has slider controls, conceptual schematic diagrams, calculated outputs and a provenance-aware JSON export.
+
+- [Methods and historical-source boundaries](docs/aero-alter-physics.md).
+- [React station](site/src/AeroAlterLab.jsx), [physics calculations](site/src/aeroPhysics.js), [model tests](site/tests/aeroPhysics.test.js).
+- Verify with `npm run test --prefix site` and `npm run build --prefix site`.
+
+The names are documented in twentieth-century *Vymanika Shastra* literature. The shared "Victorist Collective" nineteenth-century aether blueprints are modern fictional artwork, not authenticated historical aircraft plans. No levitation or craft feasibility is claimed.
+
 ## Rung 7: Reproducible Threefold Experiments
 
 [Open the controlled comparison methods](docs/threefold-benchmark.md).
