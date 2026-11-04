@@ -135,3 +135,49 @@ synthetic data, not a sourced laboratory measurement. If independent
 calibrated experiments are available later, add a separate provenance-aware
 experimental dataset pathway with measured units, lifetime and error bars,
 rather than silently assigning physical units to toy grid sites.
+
+## Rung 16: source-attested measurement evidence intake (NOT calibration)
+
+R16 is an **in-browser, local-only evidence audit**, not a source
+verification service or physics fitter. A submitter can paste or import a
+JSON record claiming an experimental diffusion length, fluorescence lifetime,
+or fluorescence quantum yield. Inputs must include:
+
+- Versioned schema `altermath.bio-lattice.evidence.v1`.
+- `classification`: `reported_experimental_measurement` or
+  `synthetic_fixture` (the included demo is permanently a fixture).
+- Safe dataset id; DOI-shaped reference and figure/section locator for
+  reported measurements. A syntactically valid DOI is **not** evidence that
+  the cited work actually contains the reported number.
+- Material identity, preparation and conditions.
+- 1..20 measurement records, each with observable, value, unit,
+  uncertainty category and magnitude (or explicitly `not_reported` and
+  `null`), and integer or missing (`null`) sample count.
+
+The parser enforces an input size limit and strict known fields. The audit
+converts **µm to nm**, **ns to ps**, and **percent to fraction** using
+explicit dimensional factors. It retains the original value, original unit,
+reported uncertainty category and sample count, flags missing information,
+and exports an audit JSON file without network transfer. It does not compute
+population confidence intervals, pool heterogeneous methods, fetch papers,
+guess experimental error, or reproduce figures.
+
+`sourceVerified` and `calibrationGate.allowed` are **always false** in R16.
+The red gate lists the independent work that must precede physical
+calibration: verify the primary source and measurement, derive a physically
+defensible site-spacing/tick mapping, establish a mechanism for model
+couplings, and repeat on truly independent measured holdouts.
+
+The synthetic example intentionally contains *made-up numbers*. Its role is
+to demonstrate parsing and unit conversion; it must never be cited as a
+laboratory result. No real primary-source measurement values have been
+transcribed or independently verified in this PR.
+
+```sh
+npm run test:bio-lattice --prefix site
+npm run build --prefix site
+```
+
+Only the source-attested measurements workflow is new. R13/R14/R15
+dimensionless experiments remain unchanged; their `axialSpreadSites`
+results are **not** convertible to physical diffusion-length units.

@@ -247,3 +247,16 @@ outcomes, direction reversals, explicit null controls and a descriptive
 consciousness, and makes no live hardware or network changes.
 
 See the [R15 method and reproduction notes](docs/bio-lattice-research.md).
+
+## Rung 16: Bio-Lattice Experimental Evidence Gate
+
+The Bio-Lattice page includes a **local JSON evidence intake and
+measurement-review panel**. It preserves reported source metadata,
+measurement type, source units, converted dimensions, uncertainty and sample
+counts, and explicitly rejects fake unit correspondences. DOI formatting is
+checked but *does not verify the cited experiment*; a "calibration allowed"
+flag always remains false until a separate reviewed method exists.
+
+A deliberately invented synthetic fixture is bundled for testing. No actual
+measurements were introduced in R16. See
+[the evidence schema and calibration boundary](docs/bio-lattice-research.md).

@@ -8,7 +8,7 @@
     "build": "vite build && node ../scripts/copy-legacy.mjs",
     "preview": "vite preview --host 0.0.0.0",
     "test": "node --test --test-concurrency=2 tests/*.test.js",
-    "test:bio-lattice": "node --test --test-concurrency=1 tests/bioLattice.test.js tests/bioLatticeStudy.test.js tests/bioLatticeHoldout.test.js"
+    "test:bio-lattice": "node --test --test-concurrency=1 tests/bioLattice.test.js tests/bioLatticeStudy.test.js tests/bioLatticeHoldout.test.js tests/bioLatticeEvidence.test.js"
   },
   "dependencies": {
     "react": "19.2.0",
