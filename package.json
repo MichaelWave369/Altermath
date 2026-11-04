@@ -14,7 +14,8 @@
     "phase:benchmark": "node scripts/phase-benchmark.js",
     "junction:benchmark": "node scripts/junction-benchmark.js",
     "interop:smoke": "node scripts/interop-smoke.js",
-    "threefold:benchmark": "node scripts/threefold-benchmark.mjs"
+    "threefold:benchmark": "node scripts/threefold-benchmark.mjs",
+    "junction:ablation": "node scripts/junction-ablation.mjs"
   },
   "license": "MIT"
 }
