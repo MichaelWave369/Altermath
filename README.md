@@ -102,3 +102,18 @@ This is a **local deterministic test**, not a connected production bridge, autho
 - With neighboring checkouts and PhiKernel's local Python dependencies installed: \`npm run interop:smoke\`
 - Core tests (without external checkouts): \`npm run check\`
 - A separate GitHub Actions job tests pinned NBGPocketMesh and PhiKernel source revisions, including mesh receipt tampering, warrant refusal, and delivery-time revocation.
+
+## Rung 6: Altermath Live · React research interface
+
+**Threefold architecture:** Remembrance (3), Alignment (6), Return (9).
+A modern symbolic interpretation inspired by the user-supplied social-media graphics, not a historical Gnostic doctrine.
+
+The React front door hosts a deterministic 18-node Kuramoto-type oscillator model across three nested 3/6/9 rings. The Horos boundary switch enables/disables 12 cross-layer connections, with live coherence and event traces, controllable coupling, seeded fault injection and JSON export.
+
+- Source code: [site/](site/), with pure model tests in [site/tests/](site/tests/).
+- Research and source boundaries: [docs/threefold-architecture.md](docs/threefold-architecture.md).
+- Local testing: `npm run test --prefix site`; build: `npm install --prefix site && npm run build --prefix site`.
+- Deployment: [Publish Altermath Live](.github/workflows/pages.yml) builds the React site on `main` and retains earlier root labs at `lab.html`, `pleroma.html`, `phase.html` and `junction.html`.
+- Expected Pages URL **after configuration and successful deployment**: https://michaelwave369.github.io/Altermath/
+
+If GitHub Pages is not yet configured, set **Settings → Pages → Build and deployment → GitHub Actions** before running the workflow. Do not claim the site is live until the deployment succeeds.

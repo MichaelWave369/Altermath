@@ -1,0 +1,47 @@
+name: Publish Altermath Live
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: altermath-pages
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install React site dependencies
+        run: npm install --prefix site --no-audit --no-fund
+      - name: Test simulation logic
+        run: npm run test --prefix site
+      - name: Build React and archive legacy labs
+        run: npm run build --prefix site
+      - name: Verify preserved labs
+        run: |
+          test -f dist/index.html
+          test -f dist/lab.html
+          test -f dist/phase.html
+          test -f dist/pleroma.html
+          test -f dist/junction.html
+          test -f dist/src/core.js
+          test -f dist/web/app.js
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
