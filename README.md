@@ -94,3 +94,11 @@ The [Pleroma Network Lab](pleroma.html) explores one source-grounded Valentinian
 - [Junction contract and integration limits](docs/junction-contract.md).
 
 This is a **local deterministic test**, not a connected production bridge, authorization token, or cryptographically verified network protocol.
+
+## Rung 5: Verified Local Interoperability
+
+[Read the local integration guide](docs/verified-local-interop.md). This rung imports the **real NBGPocketMesh E0** routing and receipt-verification functions and runs **real PhiKernel** relational admissibility checks from local source checkouts. The signal remains synthetic and scalar-only; no live system authority, remote authentication or production bridging is implied.
+
+- With neighboring checkouts and PhiKernel's local Python dependencies installed: \`npm run interop:smoke\`
+- Core tests (without external checkouts): \`npm run check\`
+- A separate GitHub Actions job tests pinned NBGPocketMesh and PhiKernel source revisions, including mesh receipt tampering, warrant refusal, and delivery-time revocation.
