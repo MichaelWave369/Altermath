@@ -163,3 +163,19 @@ connection budget. Full and disconnected controls are explicitly unmatched.
   comparison traces, and complete evidence export.
 
 The method is an offline fixed-subset heuristic, not online agent control.
+
+
+## Rung 10 — adaptive junction controller (offline research)
+
+[Controller methods and caveats](docs/adaptive-junction-controller.md) describe
+a bounded, synthetic **online** controller. It compares present-state phase
+scoring against a frozen trained subset, rotating-priority control, shuffled
+static subset, and explicitly unmatched full/off references. All methods
+respect a hard-coded synthetic permission revocation from tick 60 to 110.
+
+- Run \`npm run junction:controller -- 369 6 9 9\`.
+- Run \`npm run test --prefix site\`.
+- The React dashboard displays signed holdout differences, switching costs,
+  active-link budgets, policy windows and full JSON evidence.
+
+This is not a connection to real network services or a grant of authority.
