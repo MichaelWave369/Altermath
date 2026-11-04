@@ -117,3 +117,17 @@ The React front door hosts a deterministic 18-node Kuramoto-type oscillator mode
 - Expected Pages URL **after configuration and successful deployment**: https://michaelwave369.github.io/Altermath/
 
 If GitHub Pages is not yet configured, set **Settings → Pages → Build and deployment → GitHub Actions** before running the workflow. Do not claim the site is live until the deployment succeeds.
+
+
+## Rung 7: Reproducible Threefold Experiments
+
+[Open the controlled comparison methods](docs/threefold-benchmark.md).
+The live React lab now compares the original 3/6/9 junction wiring with two
+degree-preserving rewired networks and a separately labeled isolated control.
+Replicated seeded trials, a deterministic disturbance/repair schedule, phase
+traces and a full JSON export make results reproducible. No universal benefit
+is assumed.
+
+- CLI: \`npm run threefold:benchmark -- 369 9\`
+- Pure model tests: \`npm run test --prefix site\`
+- React build: \`npm run build --prefix site\` (after installing site dependencies)

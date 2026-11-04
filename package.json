@@ -13,7 +13,8 @@
     "pleroma:benchmark": "node scripts/pleroma-benchmark.js",
     "phase:benchmark": "node scripts/phase-benchmark.js",
     "junction:benchmark": "node scripts/junction-benchmark.js",
-    "interop:smoke": "node scripts/interop-smoke.js"
+    "interop:smoke": "node scripts/interop-smoke.js",
+    "threefold:benchmark": "node scripts/threefold-benchmark.mjs"
   },
   "license": "MIT"
 }
