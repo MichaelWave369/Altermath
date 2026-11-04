@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Altermath | Junction Bridge Lab</title>
+<link rel="stylesheet" href="web/styles.css">
+<style>
+.lab{display:grid;grid-template-columns:1.6fr 1fr;gap:18px;margin-top:18px}.wire{position:relative;background:#0b172b;border:1px solid #364864;border-radius:16px;padding:20px}svg{display:block;width:100%;height:auto}.side{background:#111a2b;border:1px solid #364864;border-radius:16px;padding:20px}.btns{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}button{background:#173d4a;border:1px solid #347887;border-radius:8px;color:#eef8ff;padding:11px;cursor:pointer}button:disabled{opacity:.45;cursor:not-allowed}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.stats p{margin:0;padding:10px;background:#1b2a42;border-radius:8px}.stats b{display:block;font-size:1.3em}.trace{max-height:300px;overflow:auto;font:12px/1.6 ui-monospace,monospace;white-space:pre-wrap;color:#d9eaff}.link{color:#76d7d1}@media(max-width:850px){.lab{grid-template-columns:1fr}}
+</style>
+<script type="module" src="web/junction.js"></script>
+</head>
+<body><main class="shell">
+<div class="eyebrow">PHI369 LABS · RUNG 4 · OFFLINE INTEROPERABILITY EXPERIMENT</div>
+<h1>THE JUNCTION BRIDGE</h1>
+<p class="sub">A proposed route is not permission to execute. Explore separate mesh routing, kernel admissibility and an Altermath junction lifecycle. All records below are simulated locally.</p>
+<div class="lab">
+<section class="wire" aria-label="Three bounded peers">
+<svg viewBox="0 0 680 255" role="img" aria-label="Mesh routes, PhiKernel authorizes, Altermath processes junctions">
+<line x1="120" y1="124" x2="340" y2="124" stroke="#76d7d1" stroke-width="3" stroke-dasharray="8 7"/>
+<line x1="340" y1="124" x2="560" y2="124" stroke="#bc9ffa" stroke-width="3" stroke-dasharray="8 7"/>
+<g><circle cx="120" cy="124" r="63" stroke="#70c1e0" stroke-width="2" fill="#17304c"/><circle cx="340" cy="124" r="63" stroke="#e4b568" stroke-width="2" fill="#413522"/><circle cx="560" cy="124" r="63" stroke="#bc9ffa" stroke-width="2" fill="#34294e"/></g>
+<g fill="white" font-size="18" font-weight="600" text-anchor="middle"><text x="120" y="120">PocketMesh</text><text x="340" y="120">PhiKernel</text><text x="560" y="120">CompAware</text></g>
+<g fill="#c8d7e6" font-size="13" text-anchor="middle"><text x="120" y="145">ROUTE</text><text x="340" y="145">ADMIT</text><text x="560" y="145">OBSERVE</text></g>
+<text x="340" y="228" text-anchor="middle" fill="#ffc26d" font-size="15" id="diagram-status">Boundary: OPEN</text>
+</svg>
+<div class="btns">
+<button id="submit">Submit proposed junction</button>
+<button id="deliver">Advance one tick</button>
+<button id="gate">Revoke kernel boundary</button>
+<button id="policy">Policy: allow</button>
+<button id="reset">Reset</button>
+</div>
+<div class="stats" aria-live="polite">
+<p>Accepted<b id="accepted">0</b></p><p>Delivered<b id="delivered">0</b></p><p>Denied<b id="denied">0</b></p>
+<p>Expired<b id="expired">0</b></p><p>Revoked<b id="revoked">0</b></p><p>Queued<b id="queued">0</b></p>
+</div>
+</section>
+<aside class="side"><h2>Junction events</h2><p class="sub">Demonstrates fail-closed hard checks, bounded queues, TTL expiry, replay rejection and boundary revalidation at delivery.</p><div id="trace" class="trace" aria-live="polite"></div></aside>
+</div>
+<section class="readout"><h2>Research boundary</h2><p class="sub">PhiKernel and NBGPocketMesh are not remotely connected in this demo. The local adapter interprets their documented record fields but does not authenticate them or call those runtimes. Read <a class="link" href="docs/junction-contract.md">the contract</a>, <a class="link" href="phase.html">Rung 3</a>, or <a class="link" href="index.html">the main lab</a>.</p></section>
+</main></body></html>

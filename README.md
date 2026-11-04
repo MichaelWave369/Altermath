@@ -55,7 +55,9 @@ This is an exploratory software pattern, **not** a discovered physical law, a pr
 
 **Rung 3 (this PR):** 4D tesseract graph with phase oscillators, boundary gating, fault and repair experiments, and equal-degree graph baselines.
 
-**Future:** optional adapters for NBGPocketMesh, PhiKernel, PhiServe, PhiShare and CompAware, without forcing those repos to depend on Altermath.
+**Rung 4 (this PR):** offline, bounded Junction Contract modeling separation of NBGPocketMesh routing, PhiKernel hard admissibility and Altermath delivery.
+
+**Future:** authenticated optional adapters for NBGPocketMesh, PhiKernel, PhiServe, PhiShare and CompAware, without forcing other repos to depend on Altermath.
 
 ## License
 
@@ -82,3 +84,13 @@ The [Pleroma Network Lab](pleroma.html) explores one source-grounded Valentinian
 - [Math and limitations](docs/hypercube-phase-lab.md) document exactly what the simulation does and does **not** establish.
 
 *Inspired by Salvador Dalí's 1954* Corpus Hypercubus. *No reproduction of the copyrighted painting appears in the simulator; mathematical connections and physics claims are kept distinct.*
+
+## Rung 4: Junction Bridge Lab
+
+[Open Junction Bridge Lab](junction.html) to simulate proposed cross-system contact under explicit routing, hard admissibility and boundary policy. Route advice cannot grant authority, and admission is rechecked at delivery.
+
+- Browser: serve the repository with \`python -m http.server 8080\` then open [junction.html](http://localhost:8080/junction.html).
+- Verify: \`npm run check\`; repeatable toy benchmark: \`npm run junction:benchmark\`.
+- [Junction contract and integration limits](docs/junction-contract.md).
+
+This is a **local deterministic test**, not a connected production bridge, authorization token, or cryptographically verified network protocol.
