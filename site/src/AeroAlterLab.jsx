@@ -142,7 +142,7 @@ export default function AeroAlterLab(){
  const output=readings(active,result);
  const change=(key,value)=>setSettings(prev=>({...prev,[active]:{...prev[active],[key]:value}}));
  return <section className="aero-section" id="aero-alter" aria-labelledby="aero-heading">
-  <div className="section-head"><div><span className="micro">RUNG 10 · AERO-ALTER PHYSICS DEPARTMENT</span>
+  <div className="section-head"><div><span className="micro">AERO-ALTER PHYSICS DEPARTMENT · PHYSICS 01</span>
     <h2 id="aero-heading">Four old names. Four testable questions.</h2></div>
     <p>Historical vimana names meet modern, bounded mathematical demonstrations. Fiction inspires the question; physics determines the result.</p>
   </div>
