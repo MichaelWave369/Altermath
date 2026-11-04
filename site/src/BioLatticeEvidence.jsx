@@ -67,10 +67,11 @@ export default function BioLatticeEvidence(){
     <label className="bio-evidence-editor">Evidence JSON
       <textarea rows="13" spellCheck={false} maxLength={EVIDENCE_MAX_CHARS}
         aria-label="Evidence dataset JSON" value={draft}
-        onChange={e=>setDraft(e.target.value)}/>
+        onChange={e=>{setDraft(e.target.value);setReport(null);setError('');}}/>
     </label>
     <p className="bio-evidence-hint">Supported observables: {Object.values(OBSERVABLES).map(o=>o.label+' ('+Object.keys(o.factors).join(' / ')+')').join('; ')}. All absolute uncertainties retain their declared type.</p>
     {error&&<p role="alert" className="bio-evidence-error">Rejected: {error}</p>}
+    {!report&&!error&&<p className="bio-evidence-info">Input has changed. Run "Validate and audit" to generate a new review snapshot.</p>}
     {report&&<>
       <div className="bio-evidence-summary">
         <div><small>Dataset</small><b>{report.input.datasetId}</b>
