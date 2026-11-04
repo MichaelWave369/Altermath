@@ -17,7 +17,8 @@
     "threefold:benchmark": "node scripts/threefold-benchmark.mjs",
     "junction:ablation": "node scripts/junction-ablation.mjs",
     "junction:selection": "node scripts/junction-selection.mjs",
-    "junction:controller": "node scripts/junction-controller.mjs"
+    "junction:controller": "node scripts/junction-controller.mjs",
+    "junction:robustness": "node scripts/junction-robustness.mjs"
   },
   "license": "MIT"
 }
