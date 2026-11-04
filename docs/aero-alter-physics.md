@@ -1,4 +1,4 @@
-# Aero-Alter Physics Department — Rung 10
+# Aero-Alter Physics Department — Physics 01
 
 > **Four old names. Four testable questions.**
 > Research-first interactive teaching experiments inspired by the four craft names
@@ -53,7 +53,7 @@ The PDF is an external research reference, not a dataset ingested by the model.
 
 ## Reproducibility and export
 
-The browser's Rung 10 component reads a pure deterministic model:
+The browser's Aero-Alter department component reads a pure deterministic model:
 [`site/src/aeroPhysics.js`](../site/src/aeroPhysics.js).
 Each station retains its own parameter values while browsing others.
 Exported JSON includes `schema: altermath.aero-alter.v1`, station ID,
