@@ -221,3 +221,17 @@ and report selection stability (Jaccard overlap) across splits.
   export the full signed comparison with per-seed evidence.
 
 These are repeatable computational stress tests, not physical validation.
+
+## Rung 14: Bio-Lattice repeatability and independent transport baseline
+
+The React [Bio-Lattice section](https://michaelwave369.github.io/Altermath/#bio-lattice)
+now includes an opt-in **paired sweep explorer**. A third synchronous Markov
+random-walk baseline, with the same seeded toy lattice disorder, provides a
+numerical control alongside sequential hopping and phase-amplitude update rules.
+Run prespecified coupling/disorder/loss sweeps across 3, 6, or 9 paired seeds,
+inspect signs including losses and ties, and export all inputs and outcomes.
+See [model, limitations and reproduction](docs/bio-lattice-research.md).
+
+This is a synthetic comparison, **not** a calibrated QED calculation,
+biological coherence measurement, proof of quantum consciousness, or route to
+actuator/system authority.

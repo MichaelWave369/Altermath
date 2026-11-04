@@ -1,0 +1,30 @@
+.bio-study{margin:28px 0;border:1px solid #344859;border-radius:15px;background:#0b1723;padding:24px;color:#deebef}
+.bio-study-heading{display:flex;align-items:flex-start;gap:20px;justify-content:space-between}
+.bio-study-heading h3{font-size:clamp(23px,2.5vw,33px);letter-spacing:-.03em;margin:10px 0}
+.bio-study-heading p{font-size:12px;color:#a9bcc7;max-width:700px;line-height:1.7}
+.bio-study-meta{display:flex;min-width:205px;flex-direction:column;gap:9px;padding:13px;border:1px solid #425868;border-radius:9px}
+.bio-study-meta b{color:#e8c692;font-size:12px}.bio-study-meta small{color:#b0c4ce;line-height:1.5}
+.bio-study-tools{display:flex;align-items:end;gap:12px;flex-wrap:wrap;padding:18px 0;border-top:1px solid #2a3d4c;border-bottom:1px solid #2a3d4c}
+.bio-study-tools label{font-size:11px;display:flex;flex-direction:column;gap:6px;color:#b3c6d1}
+.bio-study-tools select,.bio-study-tools input{min-height:35px;min-width:125px;max-width:156px;color:#f3f7f9;background:#122638;border:1px solid #536473;border-radius:6px;padding:6px}
+.bio-study-tools button{padding:10px 13px;border:1px solid #526a7e;border-radius:7px;background:#223649;color:#edf4f8;cursor:pointer}
+.bio-study-tools .bio-study-run{background:#a97d48;border-color:#b9935f;color:#0f1b26;font-weight:700}
+.bio-study-tools button:hover{filter:brightness(1.15)}
+.bio-study-note{font-size:11px;line-height:1.8;color:#a9b9c7;margin:15px 0}
+.bio-study-legend{display:flex;gap:15px;flex-wrap:wrap;margin:16px 0;font-size:12px;color:#c7d4db}
+.bio-study-legend span{display:inline-flex;gap:7px;align-items:center}
+.bio-study-legend i{display:inline-block;width:10px;height:10px;border-radius:50%}
+.bio-study-plot{border:1px solid #273f4e;border-radius:10px;background:#08141e;padding:10px}
+.bio-study-plot svg{width:100%;height:auto;display:block}
+.bio-study-table-scroll{max-width:100%;overflow-x:auto;margin:16px 0}
+.bio-study-table{width:100%;border-collapse:collapse;font-size:12px;font-variant-numeric:tabular-nums}
+.bio-study-table th,.bio-study-table td{text-align:right;white-space:nowrap;padding:11px;border-bottom:1px solid #314354}
+.bio-study-table th:first-child,.bio-study-table td:first-child{text-align:left}
+.bio-study-table thead{color:#9db7c7}.bio-study-table tbody th{color:#e2c48e}
+.bio-study-pos{color:#9adaae}.bio-study-neg{color:#edabb2}
+.bio-study-verification{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+.bio-study-verification span{font-size:11px;padding:9px 11px;background:#102839;border-radius:8px;color:#aec5d1}
+.bio-study-verification strong{display:block;font-size:17px;color:#e7d1a9}
+.bio-study-warning{font-size:12px;line-height:1.75;color:#abbcc7;margin:19px 0 0}
+.bio-study-warning strong{color:#e1c39c}.bio-study-error{color:#ffb5b5;font-size:12px}
+@media(max-width:800px){.bio-study{padding:14px}.bio-study-heading{display:block}.bio-study-meta{margin-top:14px}.bio-study-tools{align-items:stretch}}
