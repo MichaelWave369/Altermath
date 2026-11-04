@@ -205,3 +205,19 @@ evidence export. The Aero-Alter Physics department remains independent.
 
 **Important:** This is a deterministic oscillator simulation, not an empirical
 network performance test or a claim of new physics.
+
+
+## Rung 12 — Repeated disjoint train/holdout splits
+
+The [Rung 12 evaluation methods](docs/junction-replications.md) repeat the
+Rung 11 stress matrix on independently seeded synthetic train/holdout
+partitions, keeping each partition's learned starting links isolated from its
+test data. They preserve negative results, compare three equal-budget policies,
+and report selection stability (Jaccard overlap) across splits.
+
+- CLI: \`npm run junction:replications -- 369 3 3 3 6\`
+- Unit tests: \`npm run test --prefix site\`
+- React dashboard: Select 3/6/9 splits, 3/6/9-seed blocks and link budgets;
+  export the full signed comparison with per-seed evidence.
+
+These are repeatable computational stress tests, not physical validation.
