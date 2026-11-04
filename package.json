@@ -1,7 +1,7 @@
 {
   "name": "altermath",
   "private": true,
-  "version": "0.4.0",
+  "version": "0.5.0",
   "type": "module",
   "description": "Altermath: boundary-aware nested systems, phase networks, and deterministic junction contracts",
   "engines": {
@@ -9,10 +9,11 @@
   },
   "scripts": {
     "test": "node --test",
-    "check": "node --check src/core.js && node --check src/demo.js && node --check web/app.js && node --check src/pleroma-data.js && node --check src/pleroma-network.js && node --check web/pleroma.js && node --check scripts/pleroma-benchmark.js && node --check src/phase-geometry.js && node --check src/phase-network.js && node --check web/phase.js && node --check scripts/phase-benchmark.js && node --check src/junction-contract.js && node --check scripts/junction-benchmark.js && node --check web/junction.js && npm test",
+    "check": "node --check src/core.js && node --check src/demo.js && node --check web/app.js && node --check src/pleroma-data.js && node --check src/pleroma-network.js && node --check web/pleroma.js && node --check scripts/pleroma-benchmark.js && node --check src/phase-geometry.js && node --check src/phase-network.js && node --check web/phase.js && node --check scripts/phase-benchmark.js && node --check src/junction-contract.js && node --check scripts/junction-benchmark.js && node --check web/junction.js && node --check src/verified-interop.js && node --check scripts/interop-smoke.js && npm test",
     "pleroma:benchmark": "node scripts/pleroma-benchmark.js",
     "phase:benchmark": "node scripts/phase-benchmark.js",
-    "junction:benchmark": "node scripts/junction-benchmark.js"
+    "junction:benchmark": "node scripts/junction-benchmark.js",
+    "interop:smoke": "node scripts/interop-smoke.js"
   },
   "license": "MIT"
 }

@@ -15,3 +15,37 @@ jobs:
           node-version: '22'
       - name: Syntax and unit tests
         run: npm run check
+  real-source-local-interop:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: Altermath
+      - uses: actions/checkout@v4
+        with:
+          repository: MichaelWave369/NBGPocketMesh
+          ref: 15f378000860d2ca5083dd12cb23678ee36660dd
+          path: NBGPocketMesh
+      - uses: actions/checkout@v4
+        with:
+          repository: MichaelWave369/PhiKernel
+          ref: b877706a18aa0470f6dbb38f00c163a02915b75f
+          path: PhiKernel
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install PhiKernel local dependencies
+        run: python -m pip install -e ./PhiKernel
+      - name: Verify real source route and warrant checks
+        working-directory: Altermath
+        env:
+          MESH_ROOT: ../NBGPocketMesh
+          KERNEL_ROOT: ../PhiKernel
+          PYTHON_BIN: python
+        run: npm run interop:smoke
+
