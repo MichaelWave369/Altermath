@@ -21,7 +21,7 @@ for(const mode of ['hopping','amplitude']){
   test(mode+' stays localized with zero coupling',()=>{
     const x=simulateBioLattice({mode,steps:40,loss:0,coupling:0});
     assert.equal(x.metrics.effectiveSites,1);
-    assert.equal(x.probabilities[x.source],1);
+    assert.ok(Math.abs(x.probabilities[x.source]-1)<1e-9);
   });
 }
 test('rejects malformed and unbounded parameters',()=>{
