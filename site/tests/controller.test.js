@@ -2,7 +2,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {buildTopology} from '../src/model.js';
 import {runController,runControllerTrial,chooseOnline,authorizedJunctions,
-  validateController,CONTROLLER_SCHEMA,HOLDOUT_GAP} from '../src/controller.js';
+  validateController,CONTROLLER_SCHEMA} from '../src/controller.js';
+import {HOLDOUT_GAP} from '../src/selection.js';
 import {createWorld} from '../src/model.js';
 import {junctionCatalogue} from '../src/ablation.js';
 
