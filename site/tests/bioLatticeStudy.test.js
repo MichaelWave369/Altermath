@@ -1,4 +1,5 @@
 import test from 'node:test';
+import {simulateBioLattice} from '../src/bioLattice.js';
 import assert from 'node:assert/strict';
 import {simulateMarkovTransport,runBioLatticeStudy,STUDY_MODES,SWEEP_GRID,BIO_STUDY_SCHEMA}
   from '../src/bioLatticeStudy.js';
@@ -67,8 +68,8 @@ test('differing update rules produce different distributions at nonzero coupling
   const base={rings:10,protofilaments:13,coupling:1,disorder:.7,loss:0,steps:15,seed:5};
   const markov=simulateMarkovTransport(base);
   assert.ok(markov.metrics.axialSpreadSites>0);
-  const hopping=runBioLatticeStudy({base,seedCount:3,startSeed:5,sweepKey:'disorder'}).rows[2];
-  assert.ok(hopping.means.hopping.spread>=0);
+  const hopping=simulateBioLattice({...base,mode:'hopping'});
+  assert.ok(hopping.metrics.axialSpreadSites>=0);
   assert.notEqual(markov.metrics.axialSpreadSites,
-    hopping.means.hopping.spread);
+    hopping.metrics.axialSpreadSites);
 });
