@@ -20,6 +20,8 @@ jobs:
           node-version: '22'
       - name: Install React dependencies
         run: npm install --prefix site --no-audit --no-fund
+      - name: Isolated Bio-Lattice numerical tests (R13 and R14)
+        run: npm run test:bio-lattice --prefix site
       - name: Test all existing research models plus Aero-Alter Physics
         run: npm run test --prefix site
       - name: Run root checks

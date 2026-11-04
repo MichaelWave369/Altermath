@@ -40,3 +40,44 @@ npm run build
 ```
 
 The lab lives on the existing React front door at `#bio-lattice`. Tests include deterministic replay, normalization and decay invariants, no-coupling behavior and input validation. No network calls or hardware access are performed by the simulator.
+
+## Rung 14: independent transport baseline and paired sweep analysis
+
+An additional pure module `site/src/bioLatticeStudy.js` implements a **synchronous
+Euler-discretized symmetric Markov generator** on the same open-axial,
+periodic-circumferential lattice. Unlike the sequential pair-gate hopping and
+complex-amplitude models, it distributes each node's population simultaneously
+through all local edges. Each edge uses the same seeded site disorder and the
+same `sin(theta)^2` rate mapping. The max outgoing per-node weight is bounded by
+`4*sin(0.42)^2 < 1`, so the step never creates negative mass. All three apply
+the same synthetic loss per tick.
+
+**Important:** this is NOT a calibrated continuous-time microtubule Markov
+process; one Euler tick is dimensionless. Reusing the same invented edge-rate
+rule is a fairness control, not independent physics confirmation.
+
+The R14 React panel runs a predefined 5-condition sweep of coupling, disorder,
+or loss and repeats all model/condition pairs on the same 3, 6, or 9 synthetic
+seeds. Results show mean axial spread, signed phase-amplitude minus Markov
+differences, per-seed sign counts and all underlying records in export JSON.
+No parameters are trained, no holdout experiments are performed, and reused
+seeds are correlated across conditions. Comparing these model differences does
+not license inferential p-values, quantum-coherence claims, or consciousness
+claims.
+
+The 5 sweep grids are fixed and explicitly disclosed. **Possible falsifier:**
+a purported "coherent" advantage disappearing or reversing under the
+independent synchronous baseline, or changing sign over arbitrary numerical
+settings, undermines any claim that the effect is a robust physical insight.
+Even a persistent advantage would remain entirely a *toy-model* behavior
+until empirical spectra, lifetimes, uncertainties and independent replicates
+are used to calibrate the model.
+
+```sh
+npm run test --prefix site
+npm run build --prefix site
+```
+
+See `site/tests/bioLatticeStudy.test.js` for deterministic, conservation, decay,
+boundary, input-validation and seeded-control invariants. Both the R13 display
+and R14 study remain local browser tools with no device or network permissions.
