@@ -81,3 +81,57 @@ npm run build --prefix site
 See `site/tests/bioLatticeStudy.test.js` for deterministic, conservation, decay,
 boundary, input-validation and seeded-control invariants. Both the R13 display
 and R14 study remain local browser tools with no device or network permissions.
+
+## Rung 15: frozen training selection and disjoint synthetic holdout
+
+The [R15 Bio-Lattice Holdout](../site/src/bioLatticeHoldout.js) implements a
+**selection-bias challenge**, not an experimental physics study.
+
+**Prespecified protocol:**
+1. Choose one of R14's three existing five-value sweep grids, plus frozen
+   baseline parameters and the seed block sizes (3, 6 or 9 each).
+2. Use training seeds `startSeed + [0..trainingCount-1]`; for each grid point
+   compare the amplitude and synchronous Markov axial-spread means.
+3. Freeze the grid point with the greatest **absolute** mean difference on
+   training data, breaking ties by lowest grid index. The selection function
+   has no access to held-out data.
+4. Evaluate that **one** chosen configuration only on seeds
+   `startSeed + 10003 + [0..holdoutCount-1]`. Record individual paired model
+   differences, sign counts, mean and min/max. Do **not** change the setting
+   after observing holdout outcomes and call the same data confirmatory.
+5. Provide a 256-resample deterministic percentile range for the synthetic
+   held-out mean. This is **descriptive resampling of toy-model differences**,
+   not a physical uncertainty estimate, population-level confidence interval,
+   independent biological replication or statistical significance.
+6. Run two frozen numerical null controls over the held-out seeds:
+   coupling = 0, and steps = 0. All three model axial spreads must be zero.
+   Check expected surviving probability with identical per-tick loss across
+   all model modes.
+7. Export full input, train-only candidates and seeds, frozen selection,
+   held-out per-seed outcomes, controls, and explicit scientific limitations.
+
+The implementation strictly rejects nonfinite or out-of-range step counts
+before starting any loop, after the R14 timeout regression. The existing
+R13/R14 React panels and experimental models remain unchanged. The R15
+panel is entirely local to the browser, runs no external network operations
+and never proposes changes to the kernel, actual sensors, computers, PHB
+physical authority or optical hardware.
+
+**Meaning:** A direction reversal on an unseen synthetic seed block is
+evidence against a *robust numerical claim* under this fixed model; a matching
+direction does not establish a real molecular, optical, quantum or awareness
+mechanism.
+
+Reproduce:
+
+```sh
+npm run test:bio-lattice --prefix site
+npm run build --prefix site
+node --input-type=module -e "import {runBioLatticeHoldout} from './site/src/bioLatticeHoldout.js'; console.log(JSON.stringify(runBioLatticeHoldout(),null,2))"
+```
+
+The documented `altermath.bio-lattice.holdout.v1` JSON envelope is
+synthetic data, not a sourced laboratory measurement. If independent
+calibrated experiments are available later, add a separate provenance-aware
+experimental dataset pathway with measured units, lifetime and error bars,
+rather than silently assigning physical units to toy grid sites.

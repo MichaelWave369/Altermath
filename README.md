@@ -235,3 +235,15 @@ See [model, limitations and reproduction](docs/bio-lattice-research.md).
 This is a synthetic comparison, **not** a calibrated QED calculation,
 biological coherence measurement, proof of quantum consciousness, or route to
 actuator/system authority.
+
+## Rung 15: Bio-Lattice disjoint-seed holdout challenge
+
+The live Bio-Lattice page now includes a third, opt-in [R15 holdout panel](https://michaelwave369.github.io/Altermath/#bio-lattice).
+It selects the largest amplitude-versus-Markov axial-spread difference
+**using training seeds only**, freezes that grid setting, and then evaluates
+it on a disjoint held-out synthetic seed block. It exports all raw paired
+outcomes, direction reversals, explicit null controls and a descriptive
+256-resample range. The experiment does not infer quantum coherence or
+consciousness, and makes no live hardware or network changes.
+
+See the [R15 method and reproduction notes](docs/bio-lattice-research.md).
