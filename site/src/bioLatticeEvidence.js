@@ -83,7 +83,8 @@ export function parseEvidenceJson(text){
   let parsed;
   try{parsed=JSON.parse(text);}
   catch{throw new SyntaxError('Expected valid evidence JSON');}
-  return validateEvidence(parsed);
+  validateEvidence(parsed);
+  return parsed;
 }
 
 export function validateEvidence(input){
@@ -123,9 +124,10 @@ export function validateEvidence(input){
     const spec=OBSERVABLES[item.observable];
     if(!Object.hasOwn(spec.factors,item.unit))
       throw new RangeError(name+'.unit is dimensionally incompatible');
-    const value=finiteNumber(item.value,name+'.value',spec.lower,spec.upper,
+    const factor=spec.factors[item.unit];
+    const value=finiteNumber(item.value,name+'.value',spec.lower,spec.upper/factor,
       item.observable==='fluorescence_quantum_yield');
-    const factor=spec.factors[item.unit],normalized=value*factor;
+    const normalized=value*factor;
     if(!Number.isFinite(normalized)||normalized>spec.upper||
        (item.observable!=='fluorescence_quantum_yield'&&normalized<=spec.lower))
       throw new RangeError(name+'.value exceeds normalized physical range');
@@ -138,7 +140,7 @@ export function validateEvidence(input){
         throw new RangeError('not_reported uncertainty must have absolute=null');
     }else{
       const absolute=finiteNumber(item.uncertainty.absolute,name+'.uncertainty.absolute',
-        0,spec.upper);
+        0,spec.upper/factor);
       uncertainty=absolute*factor;
       if(!Number.isFinite(uncertainty)||uncertainty>spec.upper)
         throw new RangeError(name+'.uncertainty overflows base units');
