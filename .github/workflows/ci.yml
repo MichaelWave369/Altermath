@@ -48,4 +48,28 @@ jobs:
           KERNEL_ROOT: ../PhiKernel
           PYTHON_BIN: python
         run: npm run interop:smoke
+  react-site:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install React dependencies
+        run: npm install --prefix site --no-audit --no-fund
+      - name: Test 3-6-9 model
+        run: npm run test --prefix site
+      - name: Build site and archive previous labs
+        run: npm run build --prefix site
+      - name: Verify all lab pages survive
+        run: |
+          test -f dist/index.html
+          test -f dist/lab.html
+          test -f dist/pleroma.html
+          test -f dist/phase.html
+          test -f dist/junction.html
+          test -f dist/src/core.js
+          test -f dist/web/app.js
 
