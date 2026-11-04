@@ -1,4 +1,4 @@
-// Rung 10: deterministic, SI-unit textbook physics. Not a vimana flight model.
+// Aero-Alter Physics 01: deterministic, SI-unit textbook physics. Not a vimana flight model.
 export const GRAVITY=9.80665;
 export const AIR_DENSITY=1.225;
 export const WATER_DENSITY={air:AIR_DENSITY,freshwater:1000,seawater:1025};
