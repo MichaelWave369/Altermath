@@ -131,3 +131,20 @@ is assumed.
 - CLI: \`npm run threefold:benchmark -- 369 9\`
 - Pure model tests: \`npm run test --prefix site\`
 - React build: \`npm run build --prefix site\` (after installing site dependencies)
+
+
+## Rung 8: Junction Counterfactual Lab
+
+After an identical 60-tick preparation and the same six-ring disturbance, the Rung 8
+research core forks the oscillator state into one intact control, twelve separate
+single-junction removals, and an all-off reference. It scores the **signed,
+paired difference** in average phase coherence instead of treating every
+junction as beneficial.
+
+- **React interface:** a ranked but signed list of all 12 junction effects,
+  selected-branch traces, 3/6/9-seed sweeps, and a complete JSON export.
+- **CLI:** \`npm run junction:ablation -- 369 9\`.
+- **Methods and caveats:** [Junction Counterfactuals](docs/junction-counterfactuals.md).
+- **Tests:** \`npm run test --prefix site\` and the existing GitHub Actions React build.
+
+These are reproducible simulations, not extra dimensions or consciousness tests.
