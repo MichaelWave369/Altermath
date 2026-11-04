@@ -163,3 +163,16 @@ connection budget. Full and disconnected controls are explicitly unmatched.
   comparison traces, and complete evidence export.
 
 The method is an offline fixed-subset heuristic, not online agent control.
+
+
+## Rung 10: Aero-Alter Physics Department
+
+[Open the four-station Aero-Alter Physics lab](https://michaelwave369.github.io/Altermath/#aero-alter) in the React research site (when the Pages deployment succeeds).
+
+The **Shakuna / wing**, **Rukma / resonance**, **Sundara / momentum thrust**, and **Tripura / buoyancy** stations use deterministic, editable SI physics models. Each has a conceptual SVG, sliders, a force/amplitude comparison, clear limits, and a provenance-aware JSON export.
+
+- Implementation: [React station](site/src/AeroAlterLab.jsx), [pure physics models](site/src/aeroPhysics.js), [tests](site/tests/aeroPhysics.test.js).
+- Full assumptions and historical sources: [Aero-Alter Physics methods](docs/aero-alter-physics.md).
+- Validate: `npm run test --prefix site`; build: `npm run build --prefix site`.
+
+The vimana names come from the twentieth-century *Vymanika Shastra* literature. Shared "Victorist Collective" aether blueprints are modern fictional illustrations, **not authentic Victorian aircraft plans**. None of these toy models predicts antigravity or establishes any craft's flyability.
