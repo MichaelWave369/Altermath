@@ -31,6 +31,10 @@ export function simulateMarkovTransport({
   rings=18,protofilaments=13,coupling=0.38,disorder=0.15,
   loss=0.008,steps=32,seed=369
 }={}){
+  // R14 must validate the actual iteration count before looping: validating
+  // only the shared lattice with steps:0 would permit Infinity to run forever.
+  if(!Number.isInteger(steps)||steps<0||steps>120)
+    throw new RangeError('steps must be an integer in [0, 120]');
   // Shared dimensional validation from the original reference implementation,
   // with a zero-step call that avoids changing any original transport behavior.
   simulateBioLattice({rings,protofilaments,coupling,disorder,loss,steps:0,seed});
