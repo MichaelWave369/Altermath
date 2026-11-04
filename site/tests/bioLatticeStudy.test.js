@@ -63,6 +63,9 @@ test('invalid data are rejected without silent clamping',()=>{
   assert.throws(()=>runBioLatticeStudy({startSeed:2147483647}),RangeError);
   assert.throws(()=>runBioLatticeStudy({base:{coupling:10}}),RangeError);
   assert.throws(()=>simulateMarkovTransport({steps:Infinity}),RangeError);
+  assert.throws(()=>simulateMarkovTransport({steps:-1}),RangeError);
+  assert.throws(()=>simulateMarkovTransport({steps:121}),RangeError);
+  assert.throws(()=>simulateMarkovTransport({steps:1.5}),RangeError);
 });
 test('differing update rules produce different distributions at nonzero coupling',()=>{
   const base={rings:10,protofilaments:13,coupling:1,disorder:.7,loss:0,steps:15,seed:5};
