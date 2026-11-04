@@ -1,14 +1,17 @@
 {
   "name": "altermath",
   "private": true,
-  "version": "0.2.0",
+  "version": "0.3.0",
   "type": "module",
-  "description": "Research simulators for consequential junctions and historical Pleroma-inspired networks",
-  "engines": { "node": ">=20" },
+  "description": "Research simulators for nested bubbles, source-aware Pleroma graphs, and phase-coupled hypercube networks",
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "test": "node --test",
-    "check": "node --check src/core.js && node --check src/demo.js && node --check web/app.js && node --check src/pleroma-data.js && node --check src/pleroma-network.js && node --check web/pleroma.js && node --check scripts/pleroma-benchmark.js && npm test",
-    "pleroma:benchmark": "node scripts/pleroma-benchmark.js"
+    "check": "node --check src/core.js && node --check src/demo.js && node --check web/app.js && node --check src/pleroma-data.js && node --check src/pleroma-network.js && node --check web/pleroma.js && node --check scripts/pleroma-benchmark.js && node --check src/phase-geometry.js && node --check src/phase-network.js && node --check web/phase.js && node --check scripts/phase-benchmark.js && npm test",
+    "pleroma:benchmark": "node scripts/pleroma-benchmark.js",
+    "phase:benchmark": "node scripts/phase-benchmark.js"
   },
   "license": "MIT"
 }

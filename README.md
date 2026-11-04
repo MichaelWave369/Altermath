@@ -53,7 +53,9 @@ This is an exploratory software pattern, **not** a discovered physical law, a pr
 
 **Rung 2:** reproducible seeded multibubble benchmarks, event log export, throughput/overhead measurement, topology stress-testing.
 
-**Rung 3:** optional adapter interfaces for NBGPocketMesh, PhiKernel, PhiServe, PhiShare and CompAware, developed without forcing those repos to depend on Altermath.
+**Rung 3 (this PR):** 4D tesseract graph with phase oscillators, boundary gating, fault and repair experiments, and equal-degree graph baselines.
+
+**Future:** optional adapters for NBGPocketMesh, PhiKernel, PhiServe, PhiShare and CompAware, without forcing those repos to depend on Altermath.
 
 ## License
 
@@ -69,3 +71,14 @@ The [Pleroma Network Lab](pleroma.html) explores one source-grounded Valentinian
 - Source-aware explanation and caveats: [Pleroma Network Model](docs/pleroma-network-model.md).
 
 *Historical names and pair-level parentage are sourced to Irenaeus; synthetic communication edges, shocks and access rules are explicit modeling choices.*
+
+## Rung 3: Hypercube Phase Lab
+
+[Open the Hypercube Phase Lab](phase.html) to explore an actual mathematical 4D hypercube **graph** (16 vertices, 32 edges) as two eight-vertex cube layers with eight cross-boundary links. Rotate its 2D projection, close/reopen a Horos-inspired boundary and observe a Kuramoto-type phase synchronization model.
+
+- Browser: serve the repo root using `python -m http.server 8080` and open [phase.html](http://localhost:8080/phase.html).
+- Tests: `npm run check`; repeatable comparison: `npm run phase:benchmark`.
+- Compare tesseract Q4, a circulant ring-plus-chord graph and a seeded 4-regular rewired network, all with 16 nodes, 32 edges and matched starting state.
+- [Math and limitations](docs/hypercube-phase-lab.md) document exactly what the simulation does and does **not** establish.
+
+*Inspired by Salvador Dalí's 1954* Corpus Hypercubus. *No reproduction of the copyrighted painting appears in the simulator; mathematical connections and physics claims are kept distinct.*
