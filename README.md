@@ -189,3 +189,19 @@ respect a hard-coded synthetic permission revocation from tick 60 to 110.
   active-link budgets, policy windows and full JSON evidence.
 
 This is not a connection to real network services or a grant of authority.
+
+
+## Rung 11 — Locked-selection robustness matrix
+
+The [Rung 11 study](docs/junction-robustness.md) fixes one Rung 8 trained
+junction subset and tests the Rung 10 controller across weaker/stronger coupling,
+early/late permission denial and three switching fees. It uses unseen holdout
+seeds, all-sign comparisons, synthetic permission gates and a complete JSON
+evidence export. The Aero-Alter Physics department remains independent.
+
+- CLI: \`npm run junction:robustness -- 369 6 9 9\`
+- Tests: \`npm run test --prefix site\`
+- React: Five-profile × three-fee robustness matrix, to be published via GitHub Pages.
+
+**Important:** This is a deterministic oscillator simulation, not an empirical
+network performance test or a claim of new physics.
