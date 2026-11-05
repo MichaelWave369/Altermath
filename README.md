@@ -271,3 +271,17 @@ under expressly unsupported equations. It also lists seven scientific
 requirements that must be independently established before calibration.
 Both evidence and calibration gates remain closed, even for a valid DOI.
 See docs/bio-lattice-research.md for assumptions, limitations and tests.
+
+## Rung 18: Frozen-time model discrimination
+
+The Bio-Lattice site now has a [training-time-series and held-out challenge](https://michaelwave369.github.io/Altermath/#bio-lattice).
+It compares the three existing synthetic transport models at seven
+**dimensionless** observation times. Training-only selection freezes one
+nonzero time; independent seeded holdout evaluation tests whether the
+observed numerical difference survives. It includes model curves, a
+predeclared descriptive threshold, two zero-transport controls, and
+a full reproducible JSON export.
+
+This is **not** a physical quantum-coherence experiment, external
+preregistration, measured lifetime, or automated calibration. See
+[the protocol, limitations and reproduction steps](docs/bio-lattice-research.md).
