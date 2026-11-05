@@ -155,7 +155,8 @@ export function auditAssayResults(packet,raw){
     let normalizedValue=null,normalizedUncertainty=null;
     if(r.status==='measured'){
       if(typeof r.value!=='number'||!Number.isFinite(r.value)||
-         r.value<=0||r.value*factor>spec.upper)
+         r.value<0||(manifest.observable!=='fluorescence_quantum_yield'&&r.value===0)||
+         r.value*factor>spec.upper)
         throw new RangeError('Measured value is outside allowed dimensional range');
       normalizedValue=r.value*factor;
       if(r.uncertaintyKind==='not_reported'){
