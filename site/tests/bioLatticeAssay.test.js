@@ -116,6 +116,15 @@ test('quantum yield enforces physical bounds; percent uncertainties normalize',(
   data.records[0].value=101;
   assert.throws(()=>auditAssayResults(p,data),RangeError);
 });
+test('a measured zero quantum yield is distinct from an uncollected or no-signal result',()=>{
+  const p=buildAssayPacket({observable:'fluorescence_quantum_yield',unit:'fraction'});
+  const data=copy(p.resultsTemplate);
+  data.records[0]={...data.records[0],status:'measured',value:0};
+  const a=auditAssayResults(p,data);
+  assert.equal(a.rows[0].normalizedValue,0);
+  assert.equal(a.rows[0].status,'measured');
+  assert.equal(a.rows[1].normalizedValue,null);
+});
 test('strong numeric and sampling parameter bounds reject invalid inputs',()=>{
   for(const n of [Infinity,NaN,-1,2,13,4.5])
     assert.throws(()=>buildAssayPacket({replicatesPerArm:n}),RangeError);
