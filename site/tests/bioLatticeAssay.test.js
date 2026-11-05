@@ -111,8 +111,8 @@ test('quantum yield enforces physical bounds; percent uncertainties normalize',(
   data.records[0]={...data.records[0],status:'measured',value:35,
     uncertaintyKind:'standard_deviation',absoluteUncertainty:2};
   const a=auditAssayResults(p,data);
-  assert.equal(a.rows[0].normalizedValue,.35);
-  assert.equal(a.rows[0].normalizedAbsoluteUncertainty,.02);
+  assert.ok(Math.abs(a.rows[0].normalizedValue-.35)<1e-12);
+  assert.ok(Math.abs(a.rows[0].normalizedAbsoluteUncertainty-.02)<1e-12);
   data.records[0].value=101;
   assert.throws(()=>auditAssayResults(p,data),RangeError);
 });
