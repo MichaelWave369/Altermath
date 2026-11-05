@@ -4,6 +4,7 @@ import BioLatticeStudy from './BioLatticeStudy.jsx';
 import BioLatticeHoldout from './BioLatticeHoldout.jsx';
 import BioLatticeTimeChallenge from './BioLatticeTimeChallenge.jsx';
 import BioLatticeEvidence from './BioLatticeEvidence.jsx';
+import BioLatticeAssay from './BioLatticeAssay.jsx';
 import './bioLattice.css';
 
 const FIELDS=[
@@ -56,7 +57,7 @@ export default function BioLatticeLab(){
   const change=(key,value)=>setParams(p=>({...p,[key]:value}));
   return <section className="bio-lab" id="bio-lattice" aria-label="Microtubule-inspired optical lattice lab">
     <div className="bio-head">
-      <div><span className="micro">OPTICAL LATTICE / R13 THROUGH R18</span>
+      <div><span className="micro">OPTICAL LATTICE / R13 THROUGH R19</span>
         <h2>Biological geometry.<br/><em>Testable transport.</em></h2>
         <p>A microtubule-inspired cylindrical grid, shown unwrapped. Compare a classical population-hopping process with an idealized, phase-sensitive amplitude process under the same seeded topology and controls.</p>
       </div>
@@ -82,6 +83,7 @@ export default function BioLatticeLab(){
     <BioLatticeHoldout base={params}/>
     <BioLatticeTimeChallenge base={params}/>
     <BioLatticeEvidence base={params}/>
+    <BioLatticeAssay/>
     <div className="bio-footnote">
       <strong>How to read this:</strong> Brighter cells mean higher excitation probability. Axial spread is dimensionless lattice sites, not nanometers. Unitary gates preserve total probability before the selected loss term; no claim is made that microtubules perform these exact gates, carry classical data, or produce awareness. Disorder is a simplified site-phase model, not a measured molecular parameter.
       <a href="https://github.com/MichaelWave369/Altermath/blob/main/docs/bio-lattice-research.md" target="_blank" rel="noreferrer">Research method and sources ↗</a>

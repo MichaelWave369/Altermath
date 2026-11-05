@@ -285,3 +285,17 @@ a full reproducible JSON export.
 This is **not** a physical quantum-coherence experiment, external
 preregistration, measured lifetime, or automated calibration. See
 [the protocol, limitations and reproduction steps](docs/bio-lattice-research.md).
+
+## Rung 19: blinded-label assay handoff
+
+Altermath's Bio-Lattice page now offers a local **draft assay packet**
+generator: an operator-only blinded manifest, a separately exported
+private sample-to-preparation assignment key, a complete empty
+results JSON, and fail-closed physical-record review. Missing values,
+no-signal cases, exclusions, unknown uncertainty and provenance gaps
+remain visible rather than being silently discarded.
+
+This is not cryptographically secure blinding, preregistration,
+statistical power estimation, a real laboratory measurement or
+scientific validation. All calibration gates remain closed.
+See `docs/bio-lattice-research.md` for limitations and reproduction.

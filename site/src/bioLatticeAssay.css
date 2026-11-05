@@ -1,0 +1,36 @@
+.bio-assay{margin:30px 0;padding:22px;border-radius:13px;border:1px solid #486678;background:#0a1b26;color:#e5eff1}
+.bio-assay-intro{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(220px,.8fr);gap:19px}
+.bio-assay h3{font-size:clamp(25px,3vw,36px);letter-spacing:-.03em;margin:9px 0}
+.bio-assay h4{font-size:16px;margin:11px 0}
+.bio-assay p,.bio-assay li{font-size:12px;line-height:1.75;color:#b9cbd3}
+.bio-assay-intro aside{display:flex;flex-direction:column;gap:9px;padding:14px;border:1px solid #9f7954;border-radius:9px;color:#b9cbd4;font-size:11px;line-height:1.5}
+.bio-assay-intro aside b{color:#eec597}.bio-assay-intro aside small{color:#edb7ab}
+.bio-assay-controls{display:flex;flex-wrap:wrap;align-items:end;gap:10px;border-top:1px solid #385369;border-bottom:1px solid #385369;padding:17px 0;margin:16px 0}
+.bio-assay-controls label,.bio-assay-actions label{display:flex;flex-direction:column;gap:7px;font-size:11px;color:#b5cbd4}
+.bio-assay-controls input,.bio-assay-controls select,.bio-assay-actions input{min-width:110px;max-width:205px;background:#153244;color:#edf5f6;padding:8px;border:1px solid #557484;border-radius:6px}
+.bio-assay button{background:#2b5062;color:#f3f7f8;border:1px solid #6d8b99;border-radius:7px;padding:10px;font-size:12px;cursor:pointer}
+.bio-assay button:hover:not(:disabled){filter:brightness(1.15)}
+.bio-assay button:disabled{opacity:.42;cursor:not-allowed}
+.bio-assay-controls button{background:#c9a06c;color:#0b1a25;font-weight:750}
+.bio-assay-export{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:18px 0}
+.bio-assay-export>div{border:1px solid #425e70;border-radius:9px;padding:13px;background:#132b3a}
+.bio-assay-export b{font-size:13px;color:#edd3a1}
+.bio-assay-export p{min-height:59px}
+.bio-assay-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.bio-assay-scroll{min-width:0;overflow-x:auto}
+.bio-assay table{width:100%;border-collapse:collapse;font-size:12px}
+.bio-assay th,.bio-assay td{padding:9px;border-bottom:1px solid #395468;text-align:left;white-space:nowrap}
+.bio-assay th{color:#f2d29f}
+.bio-assay ul{padding-left:20px}
+.bio-assay-intake{border-top:1px solid #365366;margin-top:20px;padding-top:12px}
+.bio-assay-actions{display:flex;gap:12px;align-items:end;flex-wrap:wrap;margin-bottom:12px}
+.bio-assay textarea{width:100%;box-sizing:border-box;resize:vertical;min-height:160px;background:#061522;color:#e5eff4;border:1px solid #597888;border-radius:9px;padding:12px;font:11px/1.6 Consolas,monospace}
+.bio-assay-summary{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0}
+.bio-assay-summary>div{background:#142e40;border:1px solid #446173;border-radius:9px;padding:13px}
+.bio-assay-summary small{display:block;color:#bdd1d7;font-size:11px;text-transform:capitalize}
+.bio-assay-summary strong{display:block;font-size:23px;color:#f2d09f}
+.bio-assay-error{border:1px solid #9a5a59;padding:10px;color:#ffc3be!important;border-radius:6px}
+.bio-assay-warning{padding:14px;border:1px solid #9b7857;border-radius:8px}
+.bio-assay-warning strong{color:#f1c38e}
+@media(max-width:900px){.bio-assay-intro,.bio-assay-grid{grid-template-columns:1fr}.bio-assay-export{grid-template-columns:1fr}.bio-assay-export p{min-height:0}}
+@media(max-width:560px){.bio-assay{padding:13px}.bio-assay-summary{grid-template-columns:repeat(2,1fr)}.bio-assay-controls label{flex:1}.bio-assay-controls input,.bio-assay-controls select{width:100%;max-width:none}}

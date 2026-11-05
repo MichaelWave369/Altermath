@@ -269,3 +269,43 @@ node --input-type=module -e "import {runTimeChallenge} from './site/src/bioLatti
 The focused suite includes explicit regressions for infinite step counts,
 zero coupling, zero time, disjoint train/holdout sets, frozen selection,
 model trace fidelity and multiple metrics and baselines.
+
+## Rung 19: laboratory assay handoff packet (draft, not an experiment)
+
+R19 supplies a local, reproducible **protocol drafting and blinded-label
+data-intake workflow**, not real measurements or independently preregistered
+experimental evidence. It is not a secure randomization or blinding tool.
+
+- Define a study identifier, one R16 physical observable and compatible unit,
+  a draft number of replicates per group (3–12), and a deterministic
+  illustration seed. These counts are **not** a statistical power analysis.
+- Propose three control/preparation arms for *expert review* only:
+  prepared microtubule sample; matched perturbed preparation; and matched
+  reagent/buffer blank. Scientific appropriateness and preparation methods
+  must be independently established before any physical experiment.
+- Produce three *separate* JSON downloads: an **operator manifest** with
+  anonymized sample IDs and station order, a **private assignment key**
+  mapping IDs to proposed arms, and an **empty results template**.
+  Do **not** give the private key to blinded operators or evaluators.
+- Assignments use deterministic xorshift shuffling for illustration.
+  An integer seed and an unencrypted key are **not secure or independent
+  randomization**. An actual study requires independently operated
+  assignment custody and an approved concealment mechanism.
+- Results intake checks exact IDs, duplicates, collection states, valid
+  observable/unit matching, finite values, uncertainty type and
+  magnitudes, instrument trace references, and reasons for exclusion
+  or absent signal. Uncollected and no-signal readings are preserved
+  explicitly, **never silently treated as physical zero**.
+- Results audit exports stay **blinded**: no condition labels or private
+  assignment seed are included. No arm-level statistical comparison is
+  attempted; a domain expert must predefine and externally register the
+  appropriate analysis before collecting data.
+
+Both `sourceVerified` and the `calibrationGate.allowed` flag remain false.
+Passing the schema does not verify instrument output, optical methods,
+scientific validity or the hypotheses in R13–R18. If the model is later
+compared with real experiments, a separate independently reviewed
+measurement mapping and blinded analysis protocol will be required.
+
+Run `npm run test:bio-lattice --prefix site` and
+`npm run build --prefix site` to reproduce the software checks.
