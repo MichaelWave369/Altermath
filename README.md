@@ -260,3 +260,14 @@ flag always remains false until a separate reviewed method exists.
 A deliberately invented synthetic fixture is bundled for testing. No actual
 measurements were introduced in R16. See
 [the evidence schema and calibration boundary](docs/bio-lattice-research.md).
+
+## Rung 17: Bio-Lattice identifiability workbench
+
+The R16 evidence panel now includes a read-only mapping challenge that
+demonstrates why one length/lifetime report cannot uniquely identify
+a physical site length, model tick duration or molecular coupling.
+Five candidate coupling and loss values yield different necessary scales
+under expressly unsupported equations. It also lists seven scientific
+requirements that must be independently established before calibration.
+Both evidence and calibration gates remain closed, even for a valid DOI.
+See docs/bio-lattice-research.md for assumptions, limitations and tests.
