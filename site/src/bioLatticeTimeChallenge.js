@@ -58,6 +58,7 @@ function observation(run,metric,baseline){
   const a=run.amplitude[metric],b=run[baseline][metric];
   return {
     amplitude:a,baseline:b,difference:a-b,
+    hopping:run.hopping[metric],markov:run.markov[metric],
     otherBaseline:baseline==='markov'?'hopping':'markov',
     otherDifference:a-run[baseline==='markov'?'hopping':'markov'][metric],
     survival:{
@@ -96,8 +97,8 @@ export function runTimeChallenge({
       steps,meanDifference:AVG(perSeed.map(x=>x.difference)),
       meanAmplitude:AVG(perSeed.map(x=>x.amplitude)),
       meanBaseline:AVG(perSeed.map(x=>x.baseline)),
-      meanHopping:AVG(perSeed.map(x=>x.otherBaseline==='hopping'?x.baseline:x.amplitude-x.otherDifference)),
-      meanMarkov:AVG(perSeed.map(x=>x.otherBaseline==='markov'?x.baseline:x.amplitude-x.otherDifference)),
+      meanHopping:AVG(perSeed.map(x=>x.hopping)),
+      meanMarkov:AVG(perSeed.map(x=>x.markov)),
       signs:signs(perSeed.map(x=>x.difference)),perSeed
     };
   });
