@@ -1,5 +1,12 @@
 # Altermath
 
+## Rung 20: Beyond Notation — Invariant Discovery Lab
+
+[Open R20 on Altermath Live](https://michaelwave369.github.io/Altermath/#invariants) · [Research protocol, controls, and limits](docs/invariant-discovery-r20.md).
+
+R20 compares four known graph descriptors against an exact small-graph isomorphism oracle using relabeled, differently encoded synthetic graphs. It selects a method on one seed block before scoring a disjoint holdout block, and records all false equivalences. The React panel supports 3/6/9 seeds and complete JSON export. Run the R20 tests and CLI to reproduce it locally. This is not AI-generated theorem discovery, new mathematics, or physical evidence.
+
+
 **Where bounded systems meet, relationships become computation.**
 
 Altermath is a research-first, MIT-licensed framework exploring **consequential junctions between nested bounded systems**. Its first experiment is a dependency-free interactive browser simulator, where each bubble carries state, nested bubbles exchange signals through permitted interfaces, and independently bounded bubbles can establish new relationships when they meet.
