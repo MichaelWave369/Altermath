@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import BioLatticeIdentifiability from './BioLatticeIdentifiability.jsx';
 import {
   SYNTHETIC_EVIDENCE_EXAMPLE,parseEvidenceJson,auditEvidence,
   EVIDENCE_MAX_CHARS,OBSERVABLES
@@ -18,7 +19,7 @@ function saveAudit(audit){
   setTimeout(()=>URL.revokeObjectURL(url),1000);
 }
 const fmt=n=>Number(n).toPrecision(5);
-export default function BioLatticeEvidence(){
+export default function BioLatticeEvidence({base}){
   const [draft,setDraft]=useState(example);
   const [report,setReport]=useState(()=>auditEvidence(SYNTHETIC_EVIDENCE_EXAMPLE));
   const [error,setError]=useState('');
@@ -106,5 +107,6 @@ export default function BioLatticeEvidence(){
       </div>
       <p className="bio-evidence-disclaimer">This is a provenance and dimensional-consistency checker, not a DOI verification service. Do not treat self-reported numbers, a passed JSON check or a synthetic fixture as a physical calibration, proof of quantum coherence or evidence for consciousness.</p>
     </>}
+    <BioLatticeIdentifiability evidenceAudit={report} base={base}/>
   </section>;
 }
