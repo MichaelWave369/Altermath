@@ -181,3 +181,39 @@ npm run build --prefix site
 Only the source-attested measurements workflow is new. R13/R14/R15
 dimensionless experiments remain unchanged; their `axialSpreadSites`
 results are **not** convertible to physical diffusion-length units.
+
+## Rung 17: dimensional non-identifiability workbench
+
+R17 is a read-only demonstration of why an experimental source report cannot
+be used to infer toy-model site dimensions, timing or coupling automatically.
+It is embedded inside the R16 evidence audit and uses the same validated
+record. Editing the JSON invalidates the audit and hides derived values.
+
+The displayed candidate families use two **unsupported hypothetical identities**:
+
+1. If reported migration diffusion length L (nm) equaled time-specific toy
+   Markov axial spread S (sites) multiplied by an unknown site scale a,
+   the required value would be a = L/S nm/site. This equality is not
+   established; different couplings generate different nonzero S values
+   and require different hypothetical a values for the same L.
+2. If a reported fluorescence lifetime T (ps) represented the same decay
+   process as toy per-tick loss p, the required tick time would be
+   dt = -T ln(1-p) ps/tick. Several positive loss values imply
+   different hypothetical tick times. This equality is not established.
+
+Zero coupling and zero loss produce *undefined* mappings, rather than
+division by zero. If the R16 audit has no supported length or lifetime
+observable, no matching scale is proposed. Users may select the exact
+record when multiple observations of one type are present. A versioned
+R17 JSON export records source classification, selected record IDs, all
+toy parameters, the candidate families, and seven missing scientific
+dependencies.
+
+Neither unsupported identity is a calibration equation. The actual
+diffusion-length observable may have a different definition from toy
+axial spread. Fluorescence lifetime need not be related to toy loss.
+No source is independently verified, no physical parameters are inferred,
+no runtime controls are changed and the calibration gate stays closed.
+
+To test: npm run test:bio-lattice --prefix site
+To build: npm run build --prefix site
