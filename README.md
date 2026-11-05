@@ -47,6 +47,10 @@ This is an exploratory software pattern, **not** a discovered physical law, a pr
 - [Pure simulation core](src/core.js) and [repeatable demo world](src/demo.js)
 - [Interactive browser view](web/app.js) and [automated tests](tests/core.test.js)
 
+## Resonance, Skip & Runtime · research hypothesis
+
+[Read the Resonance–Skip–Runtime note](docs/resonance-skip-runtime.md) for a music-inspired, falsifiable proposal about phase perturbations, authorized junctions, and possible topology changes. It separates vinyl mechanics, computational analogies, and unverified physical claims; it does **not** infer new physics or consciousness from synchronization.
+
 ## Roadmap
 
 **Rung 1 (this PR):** formalism, simulator, tests and three controlled baselines.
