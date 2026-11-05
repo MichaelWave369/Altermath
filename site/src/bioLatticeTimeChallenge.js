@@ -167,7 +167,7 @@ export function runTimeChallenge({
     },
     limitations:[
       'All outcomes are from numerical toy models and dimensionless time ticks, not measured microtubules.',
-      'This is a fixed protocol embedded in software, not an independently registered or timestamped study.',
+      'This is a fixed protocol embedded in software, not independently registered or timestamped as a scientific study.',
       'Seeded simulations share assumptions, so matching holdout signs are not independent physical replication.',
       'Selecting the largest training gap introduces winner selection; heldout testing checks it without re-selection.',
       'The fixed 0.2 threshold is a descriptive synthetic site/effective-site magnitude, not a detectability or assay threshold.',
