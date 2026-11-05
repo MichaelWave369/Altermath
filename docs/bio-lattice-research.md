@@ -217,3 +217,55 @@ no runtime controls are changed and the calibration gate stays closed.
 
 To test: npm run test:bio-lattice --prefix site
 To build: npm run build --prefix site
+
+## Rung 18: paired multi-timepoint numerical model-discrimination challenge
+
+The React Bio-Lattice Lab now includes an opt-in R18 experiment designed to
+differentiate **three existing toy update rules**, not physical theories.
+
+**Predeclared numerical protocol:**
+
+1. Freeze the lattice geometry, coupling, disorder and loss, a chosen
+   metric (`axialSpreadSites` or `effectiveSites`), and the reference
+   model (synchronous Markov or sequential hopping). The phase-amplitude
+   toy is the alternative model.
+2. Use training seeds `startSeed + [0...N-1]` where N is 3, 6, or 9.
+   At times **[0, 4, 8, 16, 32, 48, 64]** dimensionless ticks,
+   calculate three-model trajectories across exactly the same training seeds.
+3. Freeze the *nonzero* observation time with the greatest absolute mean
+   paired training gap (phase-amplitude minus chosen reference).
+   Break equal-score ties by the earliest eligible time.
+4. Evaluate only that **one selected observation time** on 3, 6, or 9
+   disjoint holdout seeds, offset by **20,011** from the training block.
+   The holdout results cannot influence timepoint selection.
+5. Record each paired signed gap, held-out mean, sign retention/reversal,
+   and whether the held-out absolute mean crosses the **predeclared 0.2
+   synthetic-unit descriptive magnitude**. The threshold is **not** a
+   laboratory limit of detection, p-value, effect size estimate, or
+   evidence of physical model discrimination.
+6. Run two null checks on the held-out block: zero coupling and zero elapsed
+   ticks. Every model must then yield the same observable. Check probability
+   survival against the explicit per-step loss accounting.
+7. Export the entire training time series, single held-out timepoint outcomes,
+   seed provenance, assumptions, chosen metric/reference and controls as
+   `altermath.bio-lattice.time-challenge.v1`.
+
+**Critical scientific boundaries:** The R18 protocol is hard-coded and
+reproducible but **not independently preregistered or time-stamped**.
+The simulator's time ticks do **not** map to measured lifetimes, and the
+illustrative lattice metrics do **not** map to real experimental observables.
+A surviving numerical difference is not a quantum-biology result, nor a
+device-design claim, nor an awareness verdict. R16 source verification and
+R17 physical mapping gates remain closed.
+
+Reproduction:
+
+```sh
+npm run test:bio-lattice --prefix site
+npm run build --prefix site
+node --input-type=module -e "import {runTimeChallenge} from './site/src/bioLatticeTimeChallenge.js'; console.log(JSON.stringify(runTimeChallenge(),null,2))"
+```
+
+The focused suite includes explicit regressions for infinite step counts,
+zero coupling, zero time, disjoint train/holdout sets, frozen selection,
+model trace fidelity and multiple metrics and baselines.
