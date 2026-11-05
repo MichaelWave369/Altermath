@@ -1,0 +1,47 @@
+.r20-lab{margin:4rem 0;padding:clamp(1.1rem,3vw,2.8rem);border:1px solid rgba(99,198,199,.28);border-radius:22px;background:radial-gradient(ellipse at 95% 0%,rgba(49,117,147,.18),transparent 48%),#0b1621;color:#e3edf0}
+.r20-lab *{box-sizing:border-box}
+.r20-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:1.5rem;margin-bottom:1.8rem}
+.r20-heading h2{font-size:clamp(1.65rem,3vw,2.5rem);line-height:1.1;margin:.65rem 0 .85rem;color:#f3f7fa}
+.r20-heading h2 em{color:#90e4df;font-weight:400}
+.r20-heading p{max-width:720px;line-height:1.65;color:#aabec7}
+.r20-status{border:1px solid #446771;color:#a5d7d1;border-radius:30px;padding:.55rem .8rem;white-space:nowrap;font-size:.67rem;letter-spacing:.06em}
+.r20-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:1.25rem}
+.r20-control,.r20-results,.r20-counterexample{background:rgba(6,18,29,.76);border:1px solid rgba(136,184,192,.18);border-radius:16px;padding:1.2rem}
+.r20-control h3,.r20-counterexample h3{margin:0 0 .6rem;color:#e6f9f8}
+.r20-control p{color:#aabfc8;line-height:1.55;font-size:.88rem}
+.r20-fields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem;margin:1.4rem 0}
+.r20-fields label,.r20-counterexample label{display:flex;flex-direction:column;gap:.4rem;color:#bfd1d7;font-size:.75rem;letter-spacing:.02em}
+.r20-lab input,.r20-lab select{width:100%;min-width:0;color:#ebf8f7;background:#142734;border:1px solid #466772;border-radius:8px;padding:.65rem .5rem;font:inherit}
+.r20-buttons{display:flex;gap:.65rem;flex-wrap:wrap}
+.r20-buttons button{cursor:pointer;background:#203844;color:#e2f4f4;border:1px solid #3b6871;padding:.7rem .95rem;border-radius:9px;font-weight:650}
+.r20-buttons .r20-primary{background:#a3e5d8;color:#05262a;border-color:transparent}
+.r20-buttons button:focus-visible,.r20-lab input:focus-visible,.r20-lab select:focus-visible{outline:2px solid #d2fff6;outline-offset:3px}
+.r20-control .r20-small{font-size:.77rem;margin-top:1rem}
+.r20-error{color:#ffb6a7!important}
+.r20-statgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.55rem}
+.r20-statgrid>div{padding:.6rem;border:1px solid rgba(115,180,180,.18);border-radius:10px;display:flex;flex-direction:column;gap:.2rem}
+.r20-statgrid span,.r20-lock span{font-size:.7rem;color:#a6b9c1}
+.r20-statgrid strong{font-size:1.5rem;color:#ecf8f5}
+.r20-lock{display:flex;flex-direction:column;gap:.25rem;margin:1rem 0;padding:.8rem 1rem;border-left:3px solid #83d9c7;background:rgba(107,181,171,.09)}
+.r20-lock strong{font-size:1.15rem;color:#a7f0df}
+.r20-lock small{color:#bdd5d5}
+.r20-table-wrap{overflow-x:auto}
+.r20-lab table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;font-size:.8rem}
+.r20-lab caption{text-align:left;color:#a4b9c2;font-size:.7rem;line-height:1.5;margin-bottom:.5rem}
+.r20-lab th,.r20-lab td{padding:.55rem .4rem;border-bottom:1px solid rgba(133,176,181,.2);text-align:right}
+.r20-lab th:first-child{text-align:left}
+.r20-lab thead th{font-weight:600;color:#bed1d5}
+.r20-winner{color:#a7f0df;background:rgba(103,211,188,.06)}
+.r20-counterexample{margin-top:1.25rem;display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.5fr);gap:1.5rem}
+.r20-counterexample select{margin-top:.4rem}
+.r20-case{display:flex;flex-direction:column;gap:.4rem}
+.r20-case strong{font-size:1.03rem;color:#f5f9fb}
+.r20-case p{color:#aebfc7;line-height:1.6;margin:.15rem 0}
+.r20-alert,.r20-ok{letter-spacing:.07em;font-size:.68rem;font-weight:700}
+.r20-alert{color:#ffbd8b}
+.r20-ok{color:#97e6d1}
+.r20-footer{display:flex;gap:1.6rem;justify-content:space-between;align-items:center;padding-top:1.3rem;font-size:.8rem;line-height:1.6;color:#9db5bb}
+.r20-footer p{max-width:840px;margin:0}
+.r20-footer a{color:#a5e8e0;flex:none}
+@media(max-width:900px){.r20-heading,.r20-footer{flex-direction:column}.r20-grid,.r20-counterexample{grid-template-columns:1fr}.r20-status{white-space:normal}}
+@media(max-width:560px){.r20-fields{grid-template-columns:1fr}.r20-statgrid strong{font-size:1.2rem}.r20-lab{padding:1rem}.r20-lab th,.r20-lab td{font-size:.7rem}}
