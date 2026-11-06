@@ -19,7 +19,8 @@
     "junction:selection": "node scripts/junction-selection.mjs",
     "junction:controller": "node scripts/junction-controller.mjs",
     "junction:robustness": "node scripts/junction-robustness.mjs",
-    "junction:replications": "node scripts/junction-replications.mjs"
+    "junction:replications": "node scripts/junction-replications.mjs",
+    "horizon:duality": "node scripts/horizon-duality-r22.mjs"
   },
   "license": "MIT"
 }
