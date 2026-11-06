@@ -321,3 +321,12 @@ This research station tests a concrete **coarse-graining counterexample** using 
 Run `npm run horizon:duality -- 1 .2 .01 .4`, `node --test site/tests/horizonDuality.test.js`, and the existing `npm run test --prefix site` plus `npm run build --prefix site`. Full JSON evidence can be exported in the React UI.
 
 **Not claimed:** a physical black-to-white-hole transition, nonsingular bounce, stellar-collapse interior, proof of new mathematics, hidden ancient physical knowledge, or an experimental measurement.
+
+
+## Rung 23: The Spark Is the Melody — Score / Gears / Bubbles
+
+[Open the interactive R23 Score → Gears → Bubbles → Melody lab](https://michaelwave369.github.io/Altermath/#score-melody) after deployment. An original eight-note motif is transformed across instruments, key and tempo while a declared normalized interval/rhythm invariant, six timing gears, and an explicit permission gate determine whether the toy 'keyhole' passes. A deliberately corrupted note, a 180° phase offset, and a closed boundary provide independent negative controls. Listen to the original Web Audio synth motif (optional), adjust the parameters, and export reproducible JSON. **This is musical-information modeling, not evidence for reincarnation or consciousness transfer.**
+
+- [R23 research protocol and limitations](docs/score-gears-melody-r23.md)
+- Pure deterministic engine: `site/src/scoreMelody.js`; UI: `site/src/ScoreMelodyLab.jsx`; tests: `site/tests/scoreMelody.test.js`.
+- Verify: `npm run test --prefix site` and `npm run build --prefix site`.
