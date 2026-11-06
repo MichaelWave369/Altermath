@@ -2,6 +2,7 @@ import AeroAlterLab from './AeroAlterLab.jsx';
 import BioLatticeLab from './BioLatticeLab.jsx';
 import InvariantDiscoveryLab from './InvariantDiscoveryLab.jsx';
 import HorizonDualityLab from './HorizonDualityLab.jsx';
+import ScoreMelodyLab from './ScoreMelodyLab.jsx';
 import {useEffect, useMemo, useState} from 'react';
 import {GROUPS,activeLinks,createWorld,disturb,metrics,setGain,setGate,stepWorld} from './model.js';
 import ExperimentLab from './ExperimentLab.jsx';
@@ -104,7 +105,7 @@ export default function App(){
   const reset=()=>{setRunning(false);setWorld(createWorld(369));};
   return <div className="app">
     <header className="topbar"><a className="brand" href={BASE} aria-label="Altermath Live home"><span className="mark">Φ</span><span><b>ALTERMATH</b><small>PHI369 LABS · LIVE RESEARCH</small></span></a>
-      <nav aria-label="Main navigation"><a href="#theory">3 · 6 · 9</a><a href="#experiments">Experiments</a><a href="#invariants">R20 · Invariants</a><a href="#horizon-duality">R22 · Horizons</a><a href="#laboratories">Laboratories</a><a href="#aero-alter">Aero-Alter</a><a href="#bio-lattice">Bio-Lattice</a><a href="https://github.com/MichaelWave369/Altermath" target="_blank" rel="noreferrer">GitHub ↗</a></nav>
+      <nav aria-label="Main navigation"><a href="#theory">3 · 6 · 9</a><a href="#experiments">Experiments</a><a href="#invariants">R20 · Invariants</a><a href="#horizon-duality">R22 · Horizons</a><a href="#score-melody">R23 · Melody</a><a href="#laboratories">Laboratories</a><a href="#aero-alter">Aero-Alter</a><a href="#bio-lattice">Bio-Lattice</a><a href="https://github.com/MichaelWave369/Altermath" target="_blank" rel="noreferrer">GitHub ↗</a></nav>
     </header>
     <main>
       <section className="hero"><div><div className="eyebrow"><span className="signal-dot"/> RUNG 6 · REACTIVE RESEARCH INTERFACE</div>
@@ -137,6 +138,7 @@ export default function App(){
       <ReplicationLab />
       <InvariantDiscoveryLab />
       <HorizonDualityLab />
+      <ScoreMelodyLab />
       <section className="threefold" id="theory"><div className="section-head"><div><span className="micro">A MODEL OF THREE ROLES</span><h2>3 · Remembrance &nbsp; 6 · Alignment &nbsp; 9 · Return</h2></div><p>These are creative engineering correspondences inspired by the supplied images, not a historical 3–6–9 doctrine.</p></div>
         <div className="stage-grid">{GROUPS.map(g=>{const c=copy[g.id];return <button key={g.id} className={focus===g.id?'stage-card chosen':'stage-card'} onClick={()=>setFocus(g.id)} aria-pressed={focus===g.id} style={{'--accent':g.color}}><div className="card-top"><span>{c.eyebrow}</span><b>{g.id}</b></div><h3>{c.title}</h3><div className="card-principle">{c.principle}</div><p>{c.quote}</p><small>{c.parts.join(' · ')}</small></button>})}</div>
         <div className="focus-box" style={{'--focus':GROUPS.find(g=>g.id===focus).color}}><div><span className="micro">ACTIVE INTERPRETATION / {focus}</span><h3>{focus} · {selected.title}</h3><p>{selected.action}</p></div><span className="focus-glyph">{focus}</span></div>
