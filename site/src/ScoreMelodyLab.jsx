@@ -157,6 +157,7 @@ export default function ScoreMelodyLab(){
       <p><strong>Interpretation boundary:</strong> Here, “Spark” means a recognizable musical-information pattern, not a soul.
         A copied or re-rendered melody is not proof that subjective experience continues through death or rebirth.
         Alignment is a synthetic timing check; permission is a software policy.</p>
+      <a href="https://github.com/MichaelWave369/Altermath/blob/main/docs/Altermath_The_Unbroken_Symphony_Full_Score.md" target="_blank" rel="noreferrer">Read the full nine-movement score ↗</a>
       <a href="https://github.com/MichaelWave369/Altermath/blob/main/docs/score-gears-melody-r23.md" target="_blank" rel="noreferrer">Method, controls, and limitations ↗</a>
     </div>
   </section>;
