@@ -310,3 +310,14 @@ This is not cryptographically secure blinding, preregistration,
 statistical power estimation, a real laboratory measurement or
 scientific validation. All calibration gates remain closed.
 See `docs/bio-lattice-research.md` for limitations and reproduction.
+
+
+## Rung 22 — Horizon Duality Laboratory (classical GR)
+
+[Explore the React experiment](https://michaelwave369.github.io/Altermath/#horizon-duality) · [Read the frozen methods and falsifiers](docs/horizon-duality-r22.md).
+
+This research station tests a concrete **coarse-graining counterexample** using the standard, maximally extended Schwarzschild metric in Kruskal–Szekeres coordinates. Two time-reversal partner events in black/white interiors share the same areal radius and curvature scalar yet differ under a predeclared future coordinate step along fixed-X timelike curves. The restricted hidden variable is sign(T). The experiment separately tests horizon regularity, r=0 singularity, time reversal, boost invariance and a singular (+1/-1) social-media matrix negative control.
+
+Run `npm run horizon:duality -- 1 .2 .01 .4`, `node --test site/tests/horizonDuality.test.js`, and the existing `npm run test --prefix site` plus `npm run build --prefix site`. Full JSON evidence can be exported in the React UI.
+
+**Not claimed:** a physical black-to-white-hole transition, nonsingular bounce, stellar-collapse interior, proof of new mathematics, hidden ancient physical knowledge, or an experimental measurement.
