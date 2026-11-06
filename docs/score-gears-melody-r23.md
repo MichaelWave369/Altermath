@@ -1,5 +1,9 @@
 # R23 — Score, Gears, Bubbles, Melody
 
+## Philosophical companion: the full score
+
+[**The Unbroken Symphony — A Full Score in Nine Movements**](Altermath_The_Unbroken_Symphony_Full_Score.md) preserves the complete user-provided November 6, 2026 conceptual composition, including the overture, three acts, all nine movements, performance cues, refrains, the human orchestra, the canon table, and the proposed learner-transfer experiment. The work is **not** a literal playable music score and does not establish any physical or spiritual mechanism. The present R23 software station operationalizes only the narrow musical motif/transfer analogy from Movement IV and the gear alignment metaphor from Movement VI.
+
 ## Scope
 
 This rung turns the musical metaphor into a **bounded, falsifiable software experiment**:
