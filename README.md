@@ -1,5 +1,13 @@
 # Altermath
 
+## Rung 25: POLY-02 · Geometry versus Dynamics
+
+[Open the robustness lab](https://michaelwave369.github.io/Altermath/#polyhedral-robustness) · [POLY-02 experimental protocol](docs/polyhedral-robustness-r25.md).
+
+A stricter follow-up to R24's exact 4/8/12 face-pocket graph census: four synchronous update rules (including a zero-entropy identity/null control), three independent Bernoulli priors, and eight connected, degree-matched seeded graph rewires for every comparison. An independent array-based test oracle checks the complete 3 × 4 × 3 canonical condition grid. The interactive React lab shows per-rule entropy and fixed-size control comparisons, plus a reproducible factorial JSON export. **Synthetic only**, not evidence of higher dimensions, anomalous physics or better neural routing.
+
+Run `npm run test --prefix site` and `npm run build --prefix site`. No PocketMesh adapter is activated.
+
 ## Rung 24: POLY-01 · Polyhedral Keyhole Laboratory
 
 [Open R24 on Altermath Live](https://michaelwave369.github.io/Altermath/#polyhedral-keyholes) · [Exact experiment protocol](docs/polyhedral-keyhole-r24.md).
