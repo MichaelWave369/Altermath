@@ -1,5 +1,13 @@
 # Altermath
 
+## Rung 24: POLY-01 · Polyhedral Keyhole Laboratory
+
+[Open R24 on Altermath Live](https://michaelwave369.github.io/Altermath/#polyhedral-keyholes) · [Exact experiment protocol](docs/polyhedral-keyhole-r24.md).
+
+Three Platonic face-adjacency dual graphs (4/8/12 pockets) undergo exhaustive binary neighbor-majority updates. The aggregate-only Keyhole gives exact conditional predictive entropy of 0, 0.4743754954 and 1.4487438179 bits respectively. The live React panel offers a rotating graph, clickable pocket states, causal-collision pairs, seeded degree-preserving rewiring controls and full JSON export. These synthetic results do **not** establish physical dimensions, extra realms, or NBG computational advantages. A PocketMesh adapter remains gated behind independent task-level tests.
+
+Run `npm run test --prefix site` and `npm run build --prefix site`.
+
 ## Rung 20: Beyond Notation — Invariant Discovery Lab
 
 [Open R20 on Altermath Live](https://michaelwave369.github.io/Altermath/#invariants) · [Research protocol, controls, and limits](docs/invariant-discovery-r20.md).
