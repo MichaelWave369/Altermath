@@ -1,5 +1,13 @@
 # Altermath
 
+## Rung 27: POLY-04 · Held-Out Predictive Keyhole Challenge
+
+[Open the R27 forecasting lab after merge and Pages deployment](https://michaelwave369.github.io/Altermath/#keyhole-forecast) · [POLY-04 preregistered protocol](docs/keyhole-forecast-r27.md).
+
+This follow-up to R26 asks whether observing one or two **additional individual pocket bits**, at an equal observation budget, improves prediction of the next aggregate beyond an aggregate-only predictor, a fixed sensor configuration, and a random sensor configuration. Five predeclared eight-pocket graph representatives each have **128 training, 64 validation and 64 untouched holdout states** per split. Sensor locations are chosen on validation only; exact-match accuracy, MAE, and even negative outcomes are displayed. Three preregistered seeds (369, 636, 963) and the four POLY-02 update laws are supported. All outcomes are deterministic synthetic tasks; this is **not** a neural-agent capability or production routing result, and no PocketMesh adapter is activated.
+
+Run `npm run test --prefix site` and `npm run build --prefix site`.
+
 ## Rung 26: POLY-03 · Exhaustive Eight-Pocket Graph Ensemble
 
 [Open R26 after merge and Pages deployment](https://michaelwave369.github.io/Altermath/#polyhedral-ensemble) · [Full census and caveats](docs/polyhedral-ensemble-r26.md).
