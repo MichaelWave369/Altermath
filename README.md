@@ -1,5 +1,13 @@
 # Altermath
 
+## Rung 26: POLY-03 · Exhaustive Eight-Pocket Graph Ensemble
+
+[Open R26 after merge and Pages deployment](https://michaelwave369.github.io/Altermath/#polyhedral-ensemble) · [Full census and caveats](docs/polyhedral-ensemble-r26.md).
+
+An exact generator enumerates all **19,355 labeled simple cubic graphs on eight vertices**; 35 disconnected graphs are excluded, leaving **19,320** connected. These graphs fall into five triangle/four-cycle signature groups. Under the same uniform binary prior, synchronous neighbor-majority update and aggregate Keyhole, exhaustive census proves different conditional predictive entropy across groups **without changing pocket count or degree**. Interactive comparisons also apply the four existing POLY-02 update rules and three priors **to representatives only**. These are deterministic synthetic graph outcomes, not evidence of higher-dimensional physics, consciousness, or an operational routing improvement.
+
+Run `npm run test --prefix site` and `npm run build --prefix site`. No production PocketMesh integration.
+
 ## Rung 25: POLY-02 · Geometry versus Dynamics
 
 [Open the robustness lab](https://michaelwave369.github.io/Altermath/#polyhedral-robustness) · [POLY-02 experimental protocol](docs/polyhedral-robustness-r25.md).
