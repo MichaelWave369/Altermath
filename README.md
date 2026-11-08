@@ -1,5 +1,13 @@
 # Altermath
 
+## Rung 28: POLY-05 · Cross-Topology Transfer and Relabeling Audit
+
+[Open R28 on Altermath Live after deployment](https://michaelwave369.github.io/Altermath/#keyhole-transfer) · [POLY-05 protocol and claim boundaries](docs/keyhole-transfer-r28.md).
+
+After R27's held-out state experiment, R28 tests **unseen graph-family transfer** on the five POLY-03 eight-pocket cubic representatives. Each fold trains on three entire graphs (768 state examples), selects sensor positions on a fourth (256), then evaluates a fifth (256) across original indices and three seeded graph-isomorphic relabelings. All predictors share the same aggregate Keyhole and equal budgets of 0/1/2 extra sensed pocket bits; fixed, random, and validation-chosen sensor placements are scored without hiding regressions. The label-permutation audit checks whether any apparent advantage depends on arbitrary node indexing. This is **synthetic and non-authoritative**, not proof of improved agent inference, physical geometry, or permission to route tasks.
+
+Verify with `npm run test --prefix site` and `npm run build --prefix site`; no production PocketMesh integration.
+
 ## Rung 27: POLY-04 · Held-Out Predictive Keyhole Challenge
 
 [Open the R27 forecasting lab after merge and Pages deployment](https://michaelwave369.github.io/Altermath/#keyhole-forecast) · [POLY-04 preregistered protocol](docs/keyhole-forecast-r27.md).

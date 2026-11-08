@@ -1,0 +1,59 @@
+.r28-lab{margin:4rem 0;padding:clamp(1rem,3vw,2.5rem);border:1px solid #426575;border-radius:22px;background:radial-gradient(ellipse at 90% 0,rgba(118,166,143,.16),transparent 47%),#0b1722;color:#eaf3f3}
+.r28-lab *{box-sizing:border-box}
+.r28-heading,.r28-boundary,.r28-across-head{display:flex;justify-content:space-between;align-items:flex-start;gap:1.5rem}
+.r28-heading h2{font:650 clamp(1.7rem,3vw,2.7rem) 'Space Grotesk',sans-serif;letter-spacing:-.035em;margin:.6rem 0}
+.r28-heading h2 em{font-weight:400;color:#a5e6d9}
+.r28-heading p,.r28-lab p{font-size:.82rem;line-height:1.6;color:#a8c0ca}
+.r28-badge{border:1px solid #63806d;border-radius:30px;padding:.6rem .8rem;font-size:.65rem;white-space:nowrap;letter-spacing:.05em;color:#b3e4c1}
+.r28-pipeline{display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;border:1px solid #385e68;border-radius:14px;padding:1rem;background:#0c222d;margin:1.5rem 0}
+.r28-pipeline>div{display:flex;flex:1;min-width:120px;flex-direction:column;gap:.25rem}
+.r28-pipeline strong{color:#eedab2;font-size:1.25rem}
+.r28-pipeline span{font-size:.76rem;color:#9ebbc2}
+.r28-layout{display:grid;grid-template-columns:minmax(270px,.82fr) minmax(0,1.18fr);gap:1rem}
+.r28-controls,.r28-results,.r28-across{background:#0b151f;border:1px solid #35505e;border-radius:16px;padding:1.2rem}
+.r28-lab h3{font:650 1.2rem 'Space Grotesk',sans-serif;margin:.55rem 0 1rem}
+.r28-controls label,.r28-label{display:block;font-size:.78rem;color:#c5dade;margin:.9rem 0 .45rem}
+.r28-lab select,.r28-lab button{font:inherit;cursor:pointer;color:#e4efec;background:#1a303d;border:1px solid #446471;border-radius:9px;padding:.6rem .75rem}
+.r28-lab button:hover{background:#294554}
+.r28-lab button:focus-visible,.r28-lab select:focus-visible{outline:2px solid #b1f5df;outline-offset:3px}
+.r28-controls select{width:100%}
+.r28-field{margin:1.1rem 0}
+.r28-budget{display:flex;gap:.5rem}
+.r28-budget button{flex:1}
+.r28-budget button.current{border-color:#9ad8c5;background:#275247}
+.r28-fold{padding:.85rem;margin:1.15rem 0;background:#132732;border:1px solid #355663;border-radius:10px}
+.r28-fold small{display:block;color:#a4d0c8;font-size:.7rem}
+.r28-fold p{margin:.42rem 0;overflow-wrap:anywhere;font-size:.74rem}
+.r28-export{width:100%;border-color:#c4a477!important;background:#3c3229!important;color:#f2e4c1!important;font-weight:700!important}
+.r28-explainer{margin-bottom:0}
+.r28-note{margin:.3rem 0 1.15rem}
+.r28-meter{margin:1.1rem 0}
+.r28-meter-head{display:flex;justify-content:space-between;gap:.8rem;margin-bottom:.45rem;color:#c1d5d7;font-size:.78rem}
+.r28-meter-head strong{white-space:nowrap;color:#f1e5c6}
+.r28-track{height:11px;background:#253d47;border-radius:8px;overflow:hidden}
+.r28-track>div{height:100%;border-radius:8px;background:#88aeb8}
+.r28-track .fixed{background:#d6b687}
+.r28-track .random{background:#95b3df}
+.r28-track .candidate{background:#93e0c7}
+.r28-metrics,.r28-summary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem;margin:1.1rem 0}
+.r28-measure{padding:.85rem;border:1px solid #355160;border-radius:10px;background:#142731;display:flex;flex-direction:column;gap:.35rem}
+.r28-measure small,.r28-measure span{font-size:.69rem;color:#a6bdc3}
+.r28-measure strong{font:650 clamp(1.1rem,2vw,1.55rem) 'Space Grotesk',sans-serif;color:#f0deb6;overflow-wrap:anywhere}
+.r28-interpretation{border-left:3px solid #98dfc8;background:#1b3334;padding:.8rem;margin:1rem 0 0}
+.r28-across{margin-top:1rem}
+.r28-across-head h3{margin:.5rem 0}
+.r28-across-head p{margin:0}
+.r28-across-head>span{white-space:nowrap;font-size:.72rem;color:#a3c6cb}
+.r28-summary{grid-template-columns:repeat(4,minmax(0,1fr));margin:1.4rem 0}
+.r28-tablewrap{overflow-x:auto}
+.r28-lab table{border-collapse:collapse;width:100%;min-width:650px;font-size:.79rem;font-variant-numeric:tabular-nums}
+.r28-lab th,.r28-lab td{text-align:right;padding:.65rem .45rem;border-bottom:1px solid #344f58}
+.r28-lab th:first-child,.r28-lab td:first-child{text-align:left}
+.r28-lab th{color:#bdd0d3}
+.r28-lab tr.selected{background:#1c353e}
+.r28-lab td button{text-align:left;font-size:.75rem;padding:.4rem}
+.r28-boundary{margin-top:1.25rem;border-top:1px solid #36515d;padding-top:1rem;align-items:center}
+.r28-boundary p{margin:0}
+.r28-boundary a{white-space:nowrap;color:#a4e4d1;font-size:.8rem}
+@media(max-width:1040px){.r28-layout{grid-template-columns:1fr}.r28-heading,.r28-boundary,.r28-across-head{flex-direction:column}.r28-badge{white-space:normal}.r28-summary{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.r28-lab{padding:1rem}.r28-pipeline{gap:.35rem}.r28-pipeline>span{display:none}.r28-pipeline>div{min-width:100px}.r28-metrics{grid-template-columns:1fr 1fr}}
