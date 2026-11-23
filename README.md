@@ -1,5 +1,11 @@
 # Altermath
 
+## Causal Pocket Machine R1 · ABL Causal Belt E0
+
+[Research protocol and boundaries](docs/CAUSAL_POCKET_MACHINE_R1.md) · [Deterministic causal scheduler](src/causal-belt.mjs) · [Adversarial tests](tests/causal-belt.test.mjs) · [Runnable fixture](scripts/causal-belt-demo.mjs).
+
+The new isolated offline track adds a bounded **causal instruction score** to ABL: explicit event dependencies, deterministic ready-frontier ordering, direct-child task delegation, finite fuel reservation and refund, separate observation/refinement permissions, local numeric gear execution, validated child returns, root composition and hash-linked receipts. A synthetic network/render fixture combines two returned values. No actual parallelism, model inference, authenticated sharing, predictive optimization, physical holography or production authority is claimed. Run `node --test tests/causal-belt.test.mjs` and `node scripts/causal-belt-demo.mjs`.
+
 ## ABL R0: Bidirectional Pocket Belt Language (research branch)
 
 [Research contract and limitations](docs/ABL_BELT_R0.md) · [Interpreter](src/abl-belt.mjs) · [Tests](tests/abl-belt.test.mjs) · [Demo](scripts/abl-belt-demo.mjs).
