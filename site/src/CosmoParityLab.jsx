@@ -113,7 +113,7 @@ export default function CosmoParityLab(){
           <Metric label="Prediction mismatches" value={selected.mismatchCount}
             caption="Flat vs nested, all 256 starting masks"/>
           <Metric label="Sensor positions" value={selected.sensors.map(i=>(i<4?'A':'B')+(i%4)).join(' + ')||'None'}
-            caption="Exactly "+budget+" extra raw observations"/>
+            caption={'Exactly '+budget+' extra raw observations'}/>
           <Metric label="Donor-aware oracle accuracy" value={pct(peer.flat.accuracy)}
             caption="Metadata-informed sensor placement, not nesting benefit"/>
           <Metric label="Analytic log loss" value={num(selected.flat.logLossBits)+' bits'}
