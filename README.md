@@ -1,5 +1,11 @@
 # Altermath
 
+## ABL R0: Bidirectional Pocket Belt Language (research branch)
+
+[Research contract and limitations](docs/ABL_BELT_R0.md) · [Interpreter](src/abl-belt.mjs) · [Tests](tests/abl-belt.test.mjs) · [Demo](scripts/abl-belt-demo.mjs).
+
+ABL R0 is a deterministic **simulation-only** interpreter for inward, outward and explicitly authorized lateral navigation through nested pockets. It includes typed allowlisted gears, bounded instructions, ephemeral fold/unfold residuals, hash-chained metadata receipts and refusal tests. It does **not** compress a real model, grant network authority, or connect to PhiFractalCity, PhiMemory9 or NBGPocketMesh. Run `node scripts/abl-belt-demo.mjs` and `node --test tests/abl-belt.test.mjs`.
+
 ## Rung 28: POLY-05 · Cross-Topology Transfer and Relabeling Audit
 
 [Open R28 on Altermath Live after deployment](https://michaelwave369.github.io/Altermath/#keyhole-transfer) · [POLY-05 protocol and claim boundaries](docs/keyhole-transfer-r28.md).
