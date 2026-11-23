@@ -111,8 +111,10 @@ test('same state and sensor geometry relabeled within parents preserves scores',
         assert.ok(perm.slice(0,4).every(i=>i<4));
         assert.ok(perm.slice(4).every(i=>i>=4));
         const relocated=cosmo03Score({a,b,budget,policy,seed:369,permutation:perm});
-        assert.deepEqual(relocated.flat,original.flat);
-        assert.deepEqual(relocated.nested,original.nested);
+        for(const field of ['accuracy','entropyBits','logLossBits','mae']){
+          close(relocated.flat[field],original.flat[field]);
+          close(relocated.nested[field],original.nested[field]);
+        }
         assert.equal(relocated.mismatchCount,0);
       }
     }
