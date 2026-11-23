@@ -1,0 +1,51 @@
+.cosmo03-lab{margin:70px 0 30px;background:linear-gradient(150deg,#10242c,#0a101c 80%);border:1px solid #2f5962;border-radius:17px;padding:30px;color:#e6f2f3}
+.cosmo03-heading{display:flex;align-items:start;justify-content:space-between;gap:22px}
+.cosmo03-heading h2{font:600 clamp(28px,3vw,40px)/1.17 'Space Grotesk',sans-serif;letter-spacing:-.04em;margin:9px 0}
+.cosmo03-heading h2 em{color:#92ddc9;font-style:normal}
+.cosmo03-heading p{color:#a2bec8;font-size:13px;line-height:1.65;max-width:820px}
+.cosmo03-status{color:#ead1a0;border:1px solid #705a49;border-radius:90px;font-size:9px;letter-spacing:.07em;padding:8px;white-space:nowrap}
+.cosmo03-controls{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px;margin:22px 0}
+.cosmo03-controls label{display:flex;flex-direction:column;gap:8px;color:#abc4ce;font-size:11px;font-weight:700}
+.cosmo03-controls select{min-width:0;background:#1d3543;color:#eaf4f1;border:1px solid #42626e;border-radius:7px;padding:11px 8px;font:inherit}
+.cosmo03-panels,.cosmo03-bottom{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}
+.cosmo03-panel{background:#111e2a;border:1px solid #304753;border-radius:12px;padding:20px;min-width:0}
+.cosmo03-panelhead{display:flex;gap:10px;justify-content:space-between;align-items:center;margin-bottom:16px}
+.cosmo03-panelhead h3{font:600 17px 'Space Grotesk';margin:0}.cosmo03-panelhead span{font-size:10px;color:#a9b9c4;text-align:right}
+.cosmo03-diagram{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.cosmo03-parent{border:1px solid #426576;border-radius:11px;padding:14px;background:#152736}
+.cosmo03-parent-title{display:flex;justify-content:space-between;gap:8px;font-size:12px}
+.cosmo03-parent-title small{color:#839bab;font-size:9px}
+.cosmo03-bitrow{display:flex;gap:5px;flex-wrap:wrap;margin:13px 0 3px}
+.cosmo03-bit{font-size:11px;border:1px solid #405564;background:#243443;color:#bfced8;border-radius:7px;min-width:35px;padding:9px 5px;text-align:center}
+.cosmo03-bit.donor{border-color:#dbba82;color:#f1d7a4}
+.cosmo03-bit.seen{background:#29594d;color:#b0f5d7;border-color:#83d3b9}
+.cosmo03-bit span{display:block;font-size:8px;min-height:9px;margin-top:2px;opacity:.8}
+.cosmo03-child{grid-column:1/-1;display:flex;align-items:center;justify-content:center;gap:20px;text-align:center;border:1px dashed #698b88;background:#203235;border-radius:10px;padding:13px}
+.cosmo03-child strong,.cosmo03-child small{display:block}.cosmo03-child small{margin-top:5px;font-size:10px;color:#9dcbc4}
+.cosmo03-child>span{font-size:25px;color:#b0d2cc}
+.cosmo03-footnote{font-size:11px;color:#93aebc;line-height:1.6;margin:17px 0 4px}
+.cosmo03-compare{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.cosmo03-compare>div{background:#172b35;border:1px solid #375362;border-radius:10px;padding:16px}
+.cosmo03-compare small{display:block;color:#a5c4ce;font-size:10px}
+.cosmo03-compare strong{font:600 31px 'Space Grotesk';display:block;margin:6px 0}
+.cosmo03-compare span{display:block;font-size:10px;color:#a1bac4;margin-top:6px}
+.cosmo03-bar{background:#314753;height:7px;border-radius:8px;overflow:hidden}
+.cosmo03-bar div{background:#84d2bc;height:100%;border-radius:8px}
+.cosmo03-metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:15px}
+.cosmo03-metric{background:#1b2c38;border:1px solid #354d5e;border-radius:9px;padding:12px;min-width:0}
+.cosmo03-metric small{display:block;color:#a6bfcc;font-size:10px}
+.cosmo03-metric strong{font:600 20px 'Space Grotesk';display:block;margin:7px 0;overflow-wrap:anywhere}
+.cosmo03-metric span{font-size:9px;color:#859eab;line-height:1.5;display:block}
+.cosmo03-table-wrap{max-height:420px;overflow:auto}
+.cosmo03-table-wrap table{width:100%;border-collapse:collapse;white-space:nowrap;font-size:11px}
+.cosmo03-table-wrap th,.cosmo03-table-wrap td{padding:9px 7px;border-bottom:1px solid #2f4758;text-align:left}
+.cosmo03-table-wrap th{color:#a8c0ca;font-weight:600}
+.cosmo03-table-wrap tr.selected{background:#1b3d45}
+.cosmo03-table-wrap button{border:0;background:transparent;color:#c6eadf;text-decoration:underline;text-underline-offset:3px;padding:2px;cursor:pointer;font-size:inherit}
+.cosmo03-export{margin-top:16px;border-radius:8px;border:1px solid #b6d8ce;color:#0e2926;background:#98dcc7;padding:11px;font-size:11px;font-weight:700}
+.cosmo03-boundary{margin-top:19px;padding-top:14px;border-top:1px solid #324b5a;display:flex;gap:25px;align-items:center;justify-content:space-between}
+.cosmo03-boundary p{font-size:11px;color:#95b0bd;line-height:1.6;max-width:960px}
+.cosmo03-boundary a{font-size:11px;color:#a8e2d0;font-weight:650;white-space:nowrap}
+@media(max-width:1150px){.cosmo03-controls{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:780px){.cosmo03-lab{padding:17px}.cosmo03-heading{display:block}.cosmo03-status{display:inline-block;margin-top:10px}.cosmo03-controls{grid-template-columns:1fr 1fr}.cosmo03-panels,.cosmo03-bottom{grid-template-columns:1fr}.cosmo03-boundary{display:block}.cosmo03-diagram{grid-template-columns:1fr 1fr}.cosmo03-boundary a{display:inline-block;margin-top:10px}}
+@media(max-width:440px){.cosmo03-controls{grid-template-columns:1fr}.cosmo03-bit{min-width:30px;font-size:10px;padding:6px 3px}}
