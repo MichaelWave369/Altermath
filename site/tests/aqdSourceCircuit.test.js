@@ -1,0 +1,15 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {TIMES,fibWord,disorder,gates,apply,product,expectation,norm,paritySign,compare} from '../src/aqdSourceCircuit.js';
+// Independent dense matrix oracle: construct tensor Pauli operators by
+// explicit Kronecker products, then exp(-i theta P/2)=cos I-i sin P.
+const I=[[[1,0],[0,0]],[[0,0],[1,0]]],X=[[[0,0],[1,0]],[[1,0],[0,0]]],Y=[[[0,0],[0,-1]],[[0,1],[0,0]]],Z=[[[1,0],[0,0]],[[0,0],[-1,0]]];
+const mul=([a,b],[c,d])=>[a*c-b*d,a*d+b*c];
+function kron(a,b){return Array.from({length:a.length*b.length},(_,i)=>Array.from({length:a.length*b.length},(_,j)=>mul(a[Math.floor(i/b.length)][Math.floor(j/b.length)],b[i%b.length][j%b.length])));}
+function tensor(n,ops){let p=[[[1,0]]];for(let q=n-1;q>=0;q--)p=kron(p,ops[q]||I);return p;}
+function reference(s,g,n){let P,t;if(g.kind==='B'){t=Math.hypot(...g.v);if(t===0)return {r:[...s.r],i:[...s.i]};const mats=[X,Y,Z].map(p=>tensor(n,{[g.q]:p}));P=mats[0].map((row,i)=>row.map((_,j)=>[0,1].map(k=>mats.reduce((a,m,l)=>a+m[i][j][k]*g.v[l]/t,0))));}else{t=g.t;const p=g.kind==='XX'?X:Z;P=tensor(n,{[g.q]:p,[g.q+1]:p});}
+ const c=Math.cos(t/2),h=Math.sin(t/2);let r=[],i=[];for(let a=0;a<P.length;a++){let pr=0,pi=0;for(let b=0;b<P.length;b++){const [x,y]=mul(P[a][b],[s.r[b],s.i[b]]);pr+=x;pi+=y;}r.push(c*s.r[a]+h*pi);i.push(c*s.i[a]-h*pr);}return {r,i};}
+test('matrix oracle verifies all three gate kinds and complete staggered layers',()=>{const n=4,d=disorder(n,369),s=product(n,'X',5);let ref={r:[...s.r],i:[...s.i]};for(const axis of 'XZX'){for(const g of gates(n,axis,.95*Math.PI,d)){ref=reference(ref,g,n);apply(s,g);for(let a=0;a<s.r.length;a++){assert.ok(Math.abs(s.r[a]-ref.r[a])<1e-12);assert.ok(Math.abs(s.i[a]-ref.i[a])<1e-12);}}}assert.ok(Math.abs(norm(s)-1)<1e-12);});
+test('source word, Fibonacci times, staggered bonds and field-law distinction',()=>{assert.equal(fibWord(13),'XZXXZXZXXZXXZ');assert.deepEqual(TIMES,[1,2,3,5,8,13,21,34,55]);const d=disorder(6,369);assert.deepEqual(gates(6,'X',Math.PI,d).filter(g=>g.kind==='XX').map(g=>g.q),[0,2,4,1,3]);assert.equal(gates(6,'X',Math.PI,d,'noAKLT').filter(g=>g.kind==='XX').length,3);assert.ok(d.X.B.flat().every(x=>x>=0&&x<=Math.PI/Math.sqrt(3)));assert.notDeepEqual(d,disorder(6,369,1,'preprint'));});
+test('exact complete-basis ideal edge parity, two axes and finite correlations',()=>{const a=compare({n:4,J:1,field:0,depth:9});assert.equal(a.samples,16);assert.equal(a.exactBasis,true);for(const r of a.rows){assert.ok(r.maxNormError<1e-10);for(const axis of ['X','Z'])for(const p of r.byAxis[axis]){assert.ok(p.sites.every(v=>Math.abs(v)<=1+1e-10));assert.equal(p.sign,paritySign(r.sequence.slice(0,p.t),axis));if(r.name==='fibonacci')assert.ok(Math.abs(p.alignedEdge-1)<1e-10);}}assert.deepEqual([...a.rows[0].sequence].sort(),[...a.rows[2].sequence].sort());assert.throws(()=>compare({n:5}));});
+test('product eigenstates and deterministic output',()=>{for(const a of ['X','Z']){const s=product(4,a,5);for(let q=0;q<4;q++)assert.ok(Math.abs(expectation(s,q,a)-(5&(1<<q)?-1:1))<1e-12);}const opts={n:4,depth:3,seed:636};assert.deepEqual(compare(opts),compare(opts));});
