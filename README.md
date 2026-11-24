@@ -1,5 +1,14 @@
 # Altermath
 
+## AQD-E2 · Source circuit reconstruction
+
+[Protocol and unresolved replication](docs/aqd-source-circuit-e2.md) · [React panel after merge/deployment](https://michaelwave369.github.io/Altermath/#aqd-source-circuit).
+
+Implements the Fig. 1 staggered XX/ZZ gates, two documented disorder laws, signed edge/bulk autocorrelations and parity controls at Fibonacci times. The ideal limit passes; the small disordered ensemble does NOT reproduce persistent edge oscillations. Independent dense matrix oracle tests included. Closed-system simulation only; no experimental or topological verification claimed.
+
+Run `node scripts/aqd-source-circuit.mjs 6 .95 1 8 published` and `node --test site/tests/aqdSourceCircuit.test.js`.
+
+
 ## AQD-E1 · Raw grammar / error strata
 
 [Methods and results](docs/quasiperiodic-dynamics-e1.md) · [React panel after merge/deployment](https://michaelwave369.github.io/Altermath/#quasiperiodic-dynamics-e1).
