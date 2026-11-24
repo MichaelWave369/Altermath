@@ -1,5 +1,14 @@
 # Altermath
 
+## AQD-E1 · Raw grammar / error strata
+
+[Methods and results](docs/quasiperiodic-dynamics-e1.md) · [React panel after merge/deployment](https://michaelwave369.github.io/Altermath/#quasiperiodic-dynamics-e1).
+
+Preserves raw sequences, compares three exact-count shuffles per seed, separates static error from jitter and reports exploratory/holdout seed blocks, paired bootstrap ranges and every signed outcome. Default full study: 120 split rows, 2160 trajectories. Held-out Fibonacci improves fidelity against its own shuffles in the static-only model at lengths 34/55/89; jitter-only means are negative. Synthetic model, no physical or universal advantage claim.
+
+Run `node scripts/quasiperiodic-study.mjs 3 .04` and `node --test site/tests/quasiperiodicStudy.test.js`.
+
+
 ## AQD-E0 · Quasiperiodic Dynamics Lab
 
 [Research protocol](docs/quasiperiodic-dynamics-e0.md) · [React station after merge and deployment](https://michaelwave369.github.io/Altermath/#quasiperiodic-dynamics).
