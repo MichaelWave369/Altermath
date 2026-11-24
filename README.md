@@ -1,5 +1,12 @@
 # Altermath
 
+## AQD-E0 · Quasiperiodic Dynamics Lab
+
+[Research protocol](docs/quasiperiodic-dynamics-e0.md) · [React station after merge and deployment](https://michaelwave369.github.io/Altermath/#quasiperiodic-dynamics).
+
+Compare six equal-count pulse schedules in separate classical and quantum toy models with shared seeded noise, clean references, edge and interior distinguishability, signed periodic deltas and full JSON evidence. Raw sequences and count-matching edits remain visible. No topological protection, physical extra time dimension or hardware result is claimed. Run `node --test site/tests/quasiperiodic.test.js` and `node scripts/quasiperiodic-demo.mjs 369 4 .04 3`.
+
+
 ## Causal Pocket Machine R1 · ABL Causal Belt E0
 
 [Research protocol and boundaries](docs/CAUSAL_POCKET_MACHINE_R1.md) · [Deterministic causal scheduler](src/causal-belt.mjs) · [Adversarial tests](tests/causal-belt.test.mjs) · [Runnable fixture](scripts/causal-belt-demo.mjs).
