@@ -1,10 +1,16 @@
 # Altermath
 
+## AQD-E2.1 · Corrected field scale and independent audit
+
+[Correction, exact-basis results, Python oracle](docs/aqd-field-audit-e21.md) · [React source circuit after deployment](https://michaelwave369.github.io/Altermath/#aqd-source-circuit).
+
+Figure 1 field bound corrected from π/√3 to π/(5√3); legacy E2 remains selectable. Corrected six-qubit exact-basis ensemble yields Fibonacci aligned edge .828651, bulk .076454, final edge .623329. Two independent NumPy endpoints agree within 8e-15. Not a quantitative hardware replication. Run `node scripts/aqd-field-audit.mjs > e21.json` and `python scripts/aqd_reference.py e21.json` (NumPy).
+
 ## AQD-E2 · Source circuit reconstruction
 
 [Protocol and unresolved replication](docs/aqd-source-circuit-e2.md) · [React panel after merge/deployment](https://michaelwave369.github.io/Altermath/#aqd-source-circuit).
 
-Implements the Fig. 1 staggered XX/ZZ gates, two documented disorder laws, signed edge/bulk autocorrelations and parity controls at Fibonacci times. The ideal limit passes; the small disordered ensemble does NOT reproduce persistent edge oscillations. Independent dense matrix oracle tests included. Closed-system simulation only; no experimental or topological verification claimed.
+Implements the Fig. 1 staggered XX/ZZ gates, two documented disorder laws, signed edge/bulk autocorrelations and parity controls at Fibonacci times. The ideal limit passes; the original excessive-field ensemble did not reproduce persistent edge oscillations (see E2.1 correction above). Independent dense matrix oracle tests included. Closed-system simulation only; no experimental or topological verification claimed.
 
 Run `node scripts/aqd-source-circuit.mjs 6 .95 1 8 published` and `node --test site/tests/aqdSourceCircuit.test.js`.
 

@@ -1,6 +1,8 @@
 # AQD-E2 · Source circuit reconstruction / replication gate
 
-Source: Dumitrescu et al., Nature 607, 463–467 (2022), DOI 10.1038/s41586-022-04853-4, Eq. 1 and Fig. 1; published manuscript https://www.osti.gov/servlets/purl/1974337 and preprint schematic https://arxiv.org/pdf/2107.09676 (p. 3). The final manuscript specifies independent field components uniform on [0, pi/sqrt(3)], whereas the 2021 preprint describes magnitudes uniform on [0,4pi] with uniform directions. These are different ensembles. Default is the final manuscript; the earlier law remains a sensitivity option. The preprint's F9=54 caption is inconsistent with the recursion; the final manuscript gives 55, used here.
+**Historical E2 record:** E2.1 corrected a factor-five field transcription error. The results below describe the original, now selectable `legacyE2` model. See [the correction and exact-basis audit](aqd-field-audit-e21.md) for current results.
+
+Source: Dumitrescu et al., Nature 607, 463–467 (2022), DOI 10.1038/s41586-022-04853-4, Eq. 1 and Fig. 1; published manuscript https://www.osti.gov/servlets/purl/1974337 and preprint schematic https://arxiv.org/pdf/2107.09676 (p. 3). E2 incorrectly transcribed the final manuscript's field components as uniform on [0, pi/sqrt(3)] (correct: [0, pi/(5 sqrt(3))]), whereas the 2021 preprint describes magnitudes uniform on [0,4pi] with uniform directions. These are different ensembles. The corrected final-manuscript convention is now the default; the earlier law remains a sensitivity option. The preprint's F9=54 caption is inconsistent with the recursion; the final manuscript gives 55, used here.
 
 ## Circuit
 Even L=4,6,8,10, open boundaries. Chronological word X, XZ, XZX, XZXXZ, concatenating current then previous (operator products act right to left). Each layer applies exp(-i J Pauli_a tensor Pauli_a /2) on zero-based bonds 0,2,...; same-axis disordered gates on bonds 1,3,... with K independently uniform [0,4pi]; then exp(-i B dot sigma /2) on each site. Disorder fixed for repeated X and Z layers, independently drawn for each axis and site/bond. J is specified as a fraction of pi. Field scale zero is an ideal-limit control, not the experimental protocol.
@@ -21,7 +23,7 @@ State norm error <= 1.94e-14 in this numerical run. Ideal J=pi/field=0 exact L=4
 
 ## Verify and reproduce
 `node --test site/tests/aqdSourceCircuit.test.js`
-`node scripts/aqd-source-circuit.mjs 6 .95 1 8 published > aqd-e2.json`
+`node scripts/aqd-source-circuit.mjs 6 .95 1 8 legacyE2 > aqd-e2.json`
 The independent test oracle builds full complex Pauli matrices by Kronecker products for L=4, and checks the optimized gate action. Browser shows a single seed, 4/6 qubits, 8 product samples (exact basis at L=4), configurable field law and pulse strength. CLI supports 10 qubits. E0/E1 remain distinct.
 
 ## Next gate E2.1
