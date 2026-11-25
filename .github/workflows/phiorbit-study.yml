@@ -1,0 +1,34 @@
+name: PhiOrbit scheduler study
+
+on:
+  pull_request:
+    paths:
+      - 'src/phiorbit-*.mjs'
+      - 'src/rm369-*.mjs'
+      - 'tests/phiorbit-*.test.mjs'
+      - 'scripts/phiorbit-study.mjs'
+      - '.github/workflows/phiorbit-study.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  scheduler:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --test tests/phiorbit-scheduler.test.mjs
+      - name: Run deterministic study and replay
+        run: |
+          node scripts/phiorbit-study.mjs > phiorbit-e0.json
+          node -e "const r=require('./phiorbit-e0.json'); console.log(JSON.stringify(r.rows))"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: phiorbit-e0-study
+          path: phiorbit-e0.json
+          if-no-files-found: error
