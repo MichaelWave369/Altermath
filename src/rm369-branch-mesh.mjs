@@ -150,8 +150,30 @@ export function study(waves = 7) {
       }
       if (route(graph, a, b, allowed, MAX_BUDGET, disabled).status === 'ok') afterFailure++;
     }
+    // Component sizes give exact reachable pairs for each single-link failure.
+    const failurePairs = graph.edges.map(failed => {
+      const adj = Array.from({ length: allowed.length }, () => []);
+      for (const edge of graph.edges) if (edge !== failed) {
+        adj[edge.u].push(edge.v); adj[edge.v].push(edge.u);
+      }
+      const seen = new Set();
+      let pairs = 0;
+      for (const id of allowed) if (!seen.has(id)) {
+        const queue = [id]; seen.add(id);
+        for (let i = 0; i < queue.length; i++) for (const next of adj[queue[i]]) {
+          if (!seen.has(next)) { seen.add(next); queue.push(next); }
+        }
+        pairs += queue.length * (queue.length - 1) / 2;
+      }
+      return { edge: [failed.u, failed.v], reachable_pairs: pairs };
+    });
     return { kind, waves, nodes: allowed.length, edges: graph.edges.length, reachable,
       mean_distance: reachable ? distance / reachable : 0, max_distance: maxDistance,
-      within4, first_edge_failure_reachable: afterFailure };
+      within4, first_edge_failure_reachable: afterFailure,
+      mean_single_edge_failure_pairs: failurePairs.length ?
+        failurePairs.reduce((sum, x) => sum + x.reachable_pairs, 0) / failurePairs.length : reachable,
+      worst_single_edge_failure_pairs: failurePairs.length ?
+        Math.min(...failurePairs.map(x => x.reachable_pairs)) : reachable,
+      failure_pairs: failurePairs };
   });
 }
