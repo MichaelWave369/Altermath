@@ -1,0 +1,33 @@
+name: RM369 matched storage benchmark
+
+on:
+  pull_request:
+    paths:
+      - 'src/rm369-*.mjs'
+      - 'tests/rm369-*.test.mjs'
+      - 'scripts/rm369-benchmark.mjs'
+      - '.github/workflows/rm369-benchmark.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  benchmark:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --test tests/rm369-benchmark.test.mjs
+      - name: Measure matched workloads
+        run: |
+          node --expose-gc scripts/rm369-benchmark.mjs --timed > rm369-measurements.json
+          node -e "const r=require('./rm369-measurements.json'); console.log(JSON.stringify(r.summary))"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: rm369-e5-measurements
+          path: rm369-measurements.json
+          if-no-files-found: error
