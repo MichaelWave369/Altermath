@@ -1,0 +1,93 @@
+{
+  "seed": 369,
+  "trials": 369,
+  "observations_per_trial": 540,
+  "switching_observations": 199260,
+  "control_observations": 199260,
+  "noise": 0.08,
+  "hazard": 0.04,
+  "schedule": [
+    0,
+    1,
+    0,
+    2,
+    3,
+    0
+  ],
+  "metrics": {
+    "fixed": {
+      "regime_accuracy": 0.5,
+      "known_clean_forecast_accuracy": 0.6,
+      "known_observed_forecast_accuracy": 0.5557783800060223,
+      "unknown_recall": 0.0,
+      "known_false_unknown": 0.0,
+      "stable_wrong_rate": 0.5,
+      "control_wrong_rate": 0.0,
+      "mean_first_correct_delay_capped": {
+        "1": 90,
+        "2": 0,
+        "3": 90,
+        "4": 90,
+        "5": 0
+      },
+      "never_correct": {
+        "1": 369,
+        "2": 0,
+        "3": 369,
+        "4": 369,
+        "5": 0
+      }
+    },
+    "reactive": {
+      "regime_accuracy": 0.9182224229649704,
+      "known_clean_forecast_accuracy": 0.9105209274314965,
+      "known_observed_forecast_accuracy": 0.8368262571514604,
+      "unknown_recall": 0.9567299006323396,
+      "known_false_unknown": 0.06012646793134598,
+      "stable_wrong_rate": 0.0740418118466899,
+      "control_wrong_rate": 0.08056810197731606,
+      "mean_first_correct_delay_capped": {
+        "1": 1.046070460704607,
+        "2": 1.075880758807588,
+        "3": 1.075880758807588,
+        "4": 0.981029810298103,
+        "5": 1.1219512195121952
+      },
+      "never_correct": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0
+      }
+    },
+    "filter": {
+      "regime_accuracy": 0.9596908561678209,
+      "known_clean_forecast_accuracy": 0.9559710930442638,
+      "known_observed_forecast_accuracy": 0.8783739837398374,
+      "unknown_recall": 0.9782896717856068,
+      "known_false_unknown": 0.014754591990364349,
+      "stable_wrong_rate": 0.024687056394373467,
+      "control_wrong_rate": 0.028354913178761418,
+      "mean_first_correct_delay_capped": {
+        "1": 1.0785907859078592,
+        "2": 1.1056910569105691,
+        "3": 1.119241192411924,
+        "4": 1.948509485094851,
+        "5": 3.2872628726287263
+      },
+      "never_correct": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0
+      }
+    }
+  },
+  "boundary_bijections_tested": 40320,
+  "boundary_conjugacies": {
+    "increment_to_decrement": 8,
+    "increment_to_xor4": 0
+  }
+}

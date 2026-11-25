@@ -1,0 +1,121 @@
+{
+  "grid3": {
+    "vertices": 9,
+    "edges": 12,
+    "faces": 4,
+    "constraint_patterns": 4096,
+    "consistent_patterns": 256,
+    "solution_count_histogram": {
+      "2": 256,
+      "0": 3840
+    },
+    "minimum_edge_flips_histogram": {
+      "0": 256,
+      "1": 2048,
+      "2": 1792
+    },
+    "inconsistent_patterns_with_multiple_minimum_repairs": 2816
+  },
+  "grid9": {
+    "vertices": 81,
+    "edges": 144,
+    "faces": 64,
+    "single_errors_detected": 144,
+    "single_errors_uniquely_localized": 136,
+    "ambiguous_single_error_groups": [
+      [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          9
+        ]
+      ],
+      [
+        [
+          7,
+          8
+        ],
+        [
+          8,
+          17
+        ]
+      ],
+      [
+        [
+          72,
+          73
+        ],
+        [
+          63,
+          72
+        ]
+      ],
+      [
+        [
+          79,
+          80
+        ],
+        [
+          71,
+          80
+        ]
+      ]
+    ],
+    "double_errors_tested": 10296,
+    "double_errors_detected": 10292,
+    "undetected_double_errors": [
+      [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          9
+        ]
+      ],
+      [
+        [
+          7,
+          8
+        ],
+        [
+          8,
+          17
+        ]
+      ],
+      [
+        [
+          72,
+          73
+        ],
+        [
+          63,
+          72
+        ]
+      ],
+      [
+        [
+          79,
+          80
+        ],
+        [
+          71,
+          80
+        ]
+      ]
+    ]
+  },
+  "composite_dynamics": {
+    "independent_simultaneous_increment_cycles": [
+      8,
+      8
+    ],
+    "carry_increment_cycles": [
+      16
+    ]
+  }
+}
