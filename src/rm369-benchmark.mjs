@@ -67,11 +67,6 @@ function mapFrom(values) {
   for (let i = 0; i < values.length; i++) if (values[i]) map.set(BigInt(i), values[i]);
   return map;
 }
-function denseFrom(map, n) {
-  const values = new Uint8Array(n);
-  for (const [key, value] of map) values[Number(key)] = value;
-  return values;
-}
 function payloadHeader(depth, mode) {
   return Buffer.from([69, 53, 66, depth, mode]); // E5B benchmark-only baseline
 }
