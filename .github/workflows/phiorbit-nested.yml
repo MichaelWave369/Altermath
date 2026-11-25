@@ -1,0 +1,32 @@
+name: PhiOrbit nested domain study
+
+on:
+  pull_request:
+    paths:
+      - 'src/phiorbit-*.mjs'
+      - 'tests/phiorbit-*.test.mjs'
+      - '.github/workflows/phiorbit-nested.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  nested:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --test tests/phiorbit-nested.test.mjs
+      - name: Run deterministic nested study and execution trace
+        run: |
+          node --input-type=module -e "import {studyNested,runNested,fixtureDomains,fixtureJobs} from './src/phiorbit-nested.mjs'; console.log(JSON.stringify({...studyNested(), execution:runNested(fixtureDomains(),fixtureJobs(369,'mixed').slice(0,24))},null,2))" > phiorbit-o3.json
+          node -e "const r=require('./phiorbit-o3.json'); console.log(JSON.stringify(r.rows))"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: phiorbit-o3-study
+          path: phiorbit-o3.json
+          if-no-files-found: error
