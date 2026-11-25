@@ -1,0 +1,34 @@
+name: PhiOrbit causal scheduler study
+
+on:
+  pull_request:
+    paths:
+      - 'src/phiorbit-*.mjs'
+      - 'src/rm369-*.mjs'
+      - 'tests/phiorbit-*.test.mjs'
+      - 'scripts/phiorbit-causal-study.mjs'
+      - '.github/workflows/phiorbit-causal.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  causal:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --test tests/phiorbit-causal.test.mjs
+      - name: Run deterministic causal study
+        run: |
+          node scripts/phiorbit-causal-study.mjs > phiorbit-o1.json
+          node -e "const r=require('./phiorbit-o1.json'); console.log(JSON.stringify(r.rows))"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: phiorbit-o1-study
+          path: phiorbit-o1.json
+          if-no-files-found: error
