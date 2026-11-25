@@ -1,0 +1,31 @@
+name: RM369 pinned Python interoperability
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  rm369-interop:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/checkout@v4
+        with:
+          repository: MichaelWave369/Codex
+          ref: 9907e78332c4eda24cc09e8d9933dba6e31bbdcd
+          path: rm369-codex-reference
+          persist-credentials: false
+      - name: Cross-language contract
+        env:
+          RM369_CODEX_PATH: ${{ github.workspace }}/rm369-codex-reference/src
+        run: node --test tests/rm369-interop.test.mjs
